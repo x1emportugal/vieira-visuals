@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vieira.Visuals — Direção Criativa, Vídeo e IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,500;1,6..96,700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div style="position:relative;width:100%;overflow:hidden;">
+
+<!-- ============ NAV ============ -->
+<nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:15px clamp(20px,5vw,64px);background:rgba(10,9,8,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(236,231,222,.08);transform:translateY(-105%);opacity:0;transition:transform .6s cubic-bezier(.16,1,.3,1),opacity .5s ease;">
+  <a href="#topo" style="font-family:var(--disp);font-weight:700;font-size:1.3rem;letter-spacing:.02em;color:#ece7de;">Vieira<span style="color:var(--gold);">.</span>Visuals</a>
+  <div data-nav-links style="display:flex;gap:36px;align-items:center;">
+    <a href="#trabalhos" style="font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#c8c1b6;" style-hover="color:var(--gold);">Trabalhos</a>
+    <a href="#album" style="font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#c8c1b6;" style-hover="color:var(--gold);">Álbum</a>
+    <a href="#sobre" style="font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#c8c1b6;" style-hover="color:var(--gold);">Sobre</a>
+    <a href="#contato" style="font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#0a0908;background:var(--gold);border-radius:999px;padding:11px 20px;" style-hover="background:var(--gold-bright);">Contato</a>
+  </div>
+  <button data-hamburger id="navBurger" aria-label="Menu" style="display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;border-radius:999px;background:none;border:1px solid rgba(236,231,222,.2);cursor:pointer;">
+    <span style="display:block;width:18px;height:1.5px;background:#ece7de;margin:0 auto;"></span>
+    <span style="display:block;width:18px;height:1.5px;background:#ece7de;margin:0 auto;"></span>
+  </button>
+</nav>
+
+<!-- ============ MOBILE MENU ============ -->
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;z-index:80;background:#0a0908;flex-direction:column;padding:22px clamp(20px,6vw,48px);animation:riseIn .4s ease both;">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <span style="font-family:var(--disp);font-weight:700;font-size:1.3rem;color:#ece7de;">Vieira<span style="color:var(--gold);">.</span>Visuals</span>
+    <button id="menuClose" aria-label="Fechar" style="width:44px;height:44px;border-radius:999px;background:none;border:1px solid rgba(236,231,222,.2);color:#ece7de;font-size:1.3rem;cursor:pointer;line-height:1;">✕</button>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+    <a href="#trabalhos" class="mobile-link" style="font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,13vw,4.6rem);line-height:1;color:#ece7de;">Trabalhos</a>
+    <a href="#album" class="mobile-link" style="font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,13vw,4.6rem);line-height:1;color:#ece7de;">Álbum</a>
+    <a href="#sobre" class="mobile-link" style="font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,13vw,4.6rem);line-height:1;color:#ece7de;">Sobre</a>
+    <a href="#contato" class="mobile-link" style="font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,13vw,4.6rem);line-height:1;color:var(--gold);">Contato</a>
+  </div>
+  <div style="font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#8f877c;">ola@vieiravisuals.com</div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="topo" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;padding:0 clamp(20px,5vw,64px);">
+  <div id="heroMedia" style="position:absolute;inset:0;z-index:0;will-change:transform;">
+    <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;display:block;"><source src="assets/videos/hero-lab.mp4" type="video/mp4"></video>
+  </div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(10,9,8,.94),rgba(10,9,8,.12) 46%,rgba(10,9,8,.5));pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(10,9,8,.7),rgba(10,9,8,0) 60%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;z-index:2;opacity:.08;mix-blend-mode:overlay;pointer-events:none;background-size:170px;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
+
+  <div style="position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;padding-top:clamp(24px,5vh,48px);">
+    <div style="font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,2.2vw,2rem);line-height:.9;">Vieira<br><span style="color:var(--gold);font-style:italic;font-weight:500;">Visuals</span></div>
+    <div style="font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#b7b0a6;text-align:right;line-height:1.9;">Showreel<br>2025</div>
+  </div>
+
+  <div id="heroContent" data-hero-bottom style="position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-end;gap:clamp(32px,5vw,72px);flex-wrap:wrap;padding-bottom:clamp(32px,6vh,64px);will-change:transform,opacity;">
+    <h1 style="font-family:var(--disp);font-weight:700;line-height:.94;letter-spacing:-.01em;font-size:clamp(2.9rem,9vw,9.5rem);color:#ece7de;flex:1 1 500px;text-shadow:0 2px 40px rgba(0,0,0,.35);">
+      <span style="display:block;animation:riseIn .95s cubic-bezier(.16,1,.3,1) .05s both;">Direção Criativa,</span>
+      <span style="display:block;animation:riseIn .95s cubic-bezier(.16,1,.3,1) .2s both;">Vídeo e <span style="font-style:italic;font-weight:500;color:var(--gold);">IA.</span></span>
+    </h1>
+    <div style="flex:0 1 400px;max-width:420px;display:flex;flex-direction:column;gap:28px;padding-bottom:6px;animation:riseIn 1s cubic-bezier(.16,1,.3,1) .5s both;">
+      <p style="font-family:var(--sans);font-size:clamp(1rem,1.15vw,1.18rem);font-weight:300;line-height:1.66;color:#cbc4b9;">Aftermovies, filmes de marca e cobertura de eventos com respiro de cinema — do primeiro brinde à última música.</p>
+      <div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start;">
+        <a href="#contato" style="font-family:var(--sans);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:16px 30px;transition:background .3s ease,color .3s ease;" style-hover="background:var(--gold);color:#0a0908;">Me conta seu projeto</a>
+        <a href="#trabalhos" style="font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#c8c1b6;border-bottom:1px solid rgba(200,193,182,.35);padding-bottom:5px;" style-hover="color:#ece7de;">Ver trabalhos <span style="display:inline-block;animation:cueBob 1.6s ease-in-out infinite;">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFÓLIO ============ -->
+<section id="trabalhos" style="scroll-margin-top:80px;position:relative;padding:clamp(90px,15vh,180px) clamp(20px,5vw,64px) clamp(50px,8vh,96px);">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:clamp(48px,8vh,88px);">
+    <div>
+      <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">01 — Trabalhos</div>
+      <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(2.8rem,7vw,6.5rem);line-height:.98;letter-spacing:-.01em;max-width:14ch;">Selecionados<span style="color:var(--gold);">.</span></h2>
+    </div>
+    <p style="font-family:var(--sans);font-size:1.02rem;font-weight:300;line-height:1.6;color:#9a9289;max-width:34ch;">Uma amostra do que rolou esse ano — festas, marcas e fins de tarde que pediam imagem à altura.</p>
+  </div>
+
+  <div data-pfgrid style="display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(20px,3vw,48px);row-gap:clamp(24px,5vh,60px);">
+    <div data-case style="grid-column:1 / span 7;">
+      <div style="position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:20px;background:#131110;">
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;"><source src="assets/videos/case-aquaclub.mp4" type="video/mp4"></video>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-top:20px;">
+        <div>
+          <div style="font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);">Beach Club</div>
+          <h3 style="font-family:var(--disp);font-weight:600;font-size:clamp(1.9rem,3.4vw,3.2rem);line-height:1;margin-top:10px;">Aquaclub</h3>
+        </div>
+        <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.06em;color:#8f877c;text-align:right;line-height:1.7;">2025<br>Aftermovie</div>
+      </div>
+    </div>
+    <div data-case style="grid-column:9 / span 4;margin-top:22vh;">
+      <div style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;border-radius:20px;background:#131110;">
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;"><source src="assets/videos/case-drone-olhao.mp4" type="video/mp4"></video>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-top:20px;">
+        <div>
+          <div style="font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);">Aéreo</div>
+          <h3 style="font-family:var(--disp);font-weight:600;font-size:clamp(1.7rem,2.8vw,2.6rem);line-height:1;margin-top:10px;">Olhão</h3>
+        </div>
+        <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.06em;color:#8f877c;text-align:right;line-height:1.7;">2025<br>Drone</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DJ SET — SHOWCASE FULL-BLEED ============ -->
+<section style="position:relative;width:100%;height:92vh;min-height:520px;overflow:hidden;background:#000;">
+  <div style="position:absolute;inset:0;overflow:hidden;">
+    <video autoplay muted loop playsinline preload="metadata" style="position:absolute;top:50%;left:50%;width:92vh;height:100vw;min-width:92vh;object-fit:cover;transform:translate(-50%,-50%) rotate(90deg);display:block;"><source src="assets/videos/dj-showcase.mp4" type="video/mp4"></video>
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.92),rgba(10,9,8,0) 46%,rgba(10,9,8,.35));pointer-events:none;"></div>
+  <div style="position:absolute;left:clamp(20px,5vw,64px);bottom:clamp(34px,8vh,72px);right:clamp(20px,5vw,64px);z-index:2;">
+    <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Aftermovie · Sunset Set</div>
+    <h2 style="font-family:var(--disp);font-weight:700;font-size:clamp(3.2rem,9vw,8.5rem);line-height:.9;letter-spacing:-.01em;color:#ece7de;">Quando o sol cai<br><span style="font-style:italic;font-weight:500;color:var(--gold);">a pista acende.</span></h2>
+    <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:#c8c1b6;margin-top:16px;">Aquaclub · Verão 2025</div>
+  </div>
+</section>
+
+<!-- ============ ÁLBUM (REEL ROTATIVO) ============ -->
+<section id="album" style="scroll-margin-top:80px;position:relative;padding:clamp(90px,14vh,170px) 0 clamp(80px,12vh,140px);border-top:1px solid rgba(236,231,222,.08);">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:clamp(40px,7vh,72px);padding:0 clamp(20px,5vw,64px);">
+    <div>
+      <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">02 — Álbum</div>
+      <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,6vw,5.4rem);line-height:1;letter-spacing:-.01em;max-width:18ch;">O que a câmera<br>levou pra casa.</h2>
+    </div>
+    <p style="font-family:var(--sans);font-size:1.02rem;font-weight:300;line-height:1.6;color:#9a9289;max-width:32ch;">Frames soltos de casamentos, festas e fins de tarde. Passe o mouse pra pausar — ou deixe rodar.</p>
+  </div>
+
+  <div id="reelWrap" style="width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);">
+    <div id="reel" style="display:flex;gap:20px;width:max-content;padding:0 10px;animation:reel 80s linear infinite;will-change:transform;">
+      <img src="assets/photos/ph01.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph07.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph02.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph09.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph03.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph05.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph04.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph06.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph08.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph01.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph07.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph02.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph09.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph03.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph05.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph04.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph06.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+      <img src="assets/photos/ph08.jpg" alt="" loading="lazy" decoding="async" style="height:clamp(280px,54vh,600px);width:auto;border-radius:16px;object-fit:cover;flex:none;">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section id="sobre" style="scroll-margin-top:80px;position:relative;padding:clamp(90px,14vh,170px) clamp(20px,5vw,64px);border-top:1px solid rgba(236,231,222,.08);">
+  <div data-about-grid style="display:grid;grid-template-columns:1.35fr 0.9fr;gap:clamp(40px,6vw,90px);align-items:end;">
+    <div>
+      <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;">03 — Sobre</div>
+      <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,6.5vw,6rem);line-height:1;letter-spacing:-.01em;max-width:15ch;">Cada evento acontece <span style="font-style:italic;font-weight:500;color:var(--gold);">uma vez só.</span></h2>
+      <p style="font-family:var(--sans);font-size:1.1rem;font-weight:300;line-height:1.72;color:#b7b0a6;max-width:46ch;margin-top:30px;">Meu trabalho é fazer com que ele possa ser revisto mil vezes — com a emoção da primeira. Você contrata uma pessoa, não uma esteira: do primeiro papo ao arquivo final, é a mesma cabeça pensando o seu filme.</p>
+    </div>
+    <div>
+      <div style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;border-radius:20px;background:#131110;">
+        <img src="assets/photos/ph04.jpg" alt="Evento de luxo" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+    </div>
+  </div>
+
+  <div data-diffs style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px);margin-top:clamp(56px,9vh,110px);">
+    <div style="border-top:1px solid rgba(212,162,78,.4);padding-top:24px;">
+      <div style="font-family:var(--disp);font-weight:700;font-size:2.6rem;color:var(--gold);line-height:1;margin-bottom:16px;">01</div>
+      <h3 style="font-family:var(--disp);font-weight:600;font-size:1.7rem;margin-bottom:12px;">Um só interlocutor</h3>
+      <p style="font-family:var(--sans);font-size:1rem;font-weight:300;line-height:1.66;color:#9a9289;">Quem atende é quem edita. Sem telefone sem fio, sem versão que ninguém aprovou.</p>
+    </div>
+    <div style="border-top:1px solid rgba(212,162,78,.4);padding-top:24px;">
+      <div style="font-family:var(--disp);font-weight:700;font-size:2.6rem;color:var(--gold);line-height:1;margin-bottom:16px;">02</div>
+      <h3 style="font-family:var(--disp);font-weight:600;font-size:1.7rem;margin-bottom:12px;">Prazo que se cumpre</h3>
+      <p style="font-family:var(--sans);font-size:1rem;font-weight:300;line-height:1.66;color:#9a9289;">Data fechada na primeira reunião. Entrego no dia — com o acabamento combinado, não às pressas.</p>
+    </div>
+    <div style="border-top:1px solid rgba(212,162,78,.4);padding-top:24px;">
+      <div style="font-family:var(--disp);font-weight:700;font-size:2.6rem;color:var(--gold);line-height:1;margin-bottom:16px;">03</div>
+      <h3 style="font-family:var(--disp);font-weight:600;font-size:1.7rem;margin-bottom:12px;">Sem fórmula pronta</h3>
+      <p style="font-family:var(--sans);font-size:1rem;font-weight:300;line-height:1.66;color:#9a9289;">Cada noite tem um clima. O corte nasce dele, nunca de um preset que já rodou em mil vídeos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section id="contato" style="scroll-margin-top:80px;position:relative;padding:clamp(100px,16vh,200px) clamp(20px,5vw,64px) clamp(48px,7vh,80px);border-top:1px solid rgba(236,231,222,.08);">
+  <div style="font-family:var(--sans);font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:34px;">04 — Contato</div>
+  <h2 style="font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,8vw,8rem);line-height:1;letter-spacing:-.01em;max-width:18ch;margin-bottom:clamp(40px,7vh,72px);">Vamos gravar algo que ninguém mais faria <span style="font-style:italic;font-weight:500;color:var(--gold);">assim?</span></h2>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(24px,4vw,56px);">
+    <a href="mailto:ola@vieiravisuals.com" style="font-family:var(--disp);font-weight:500;font-size:clamp(1.6rem,4vw,3rem);color:#ece7de;border-bottom:1px solid rgba(236,231,222,.25);padding-bottom:6px;" style-hover="color:var(--gold);border-color:var(--gold);">ola@vieiravisuals.com</a>
+    <a href="mailto:ola@vieiravisuals.com?subject=Agendar%20reuni%C3%A3o" style="font-family:var(--sans);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:16px 30px;transition:background .3s ease,color .3s ease;" style-hover="background:var(--gold);color:#0a0908;">Agende uma reunião</a>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-top:clamp(80px,14vh,160px);border-top:1px solid rgba(236,231,222,.08);padding-top:32px;">
+    <div style="font-family:var(--disp);font-weight:700;font-size:1.5rem;">Vieira<span style="color:var(--gold);">.</span>Visuals</div>
+    <div style="display:flex;gap:28px;font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;">
+      <a href="#" style="color:#c8c1b6;" style-hover="color:var(--gold);">Instagram</a>
+      <a href="#" style="color:#c8c1b6;" style-hover="color:var(--gold);">YouTube</a>
+      <a href="#" style="color:#c8c1b6;" style-hover="color:var(--gold);">Behance</a>
+    </div>
+    <div style="font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;color:#5f584f;">© 2025 — Videomaker</div>
+  </div>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
