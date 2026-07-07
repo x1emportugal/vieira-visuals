@@ -1,6 +1,6 @@
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-:root{--gold:#d4a24e;--gold-bright:#e9c079;--disp:'Bodoni Moda',Georgia,serif;--sans:'Jost',system-ui,sans-serif;}
+:root{--gold:#d4a24e;--gold-bright:#e9c079;--disp:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;}
 body{margin:0;background:#0a0908;color:#ece7de;font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{color:var(--gold);text-decoration:none;}
 a:hover{color:var(--gold-bright);}
@@ -11,7 +11,6 @@ video,img{display:block;}
 
 @keyframes riseIn{from{opacity:0;transform:translateY(48px);}to{opacity:1;transform:none;}}
 @keyframes cueBob{0%,100%{transform:translateY(0);}50%{transform:translateY(7px);}}
-@keyframes reel{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 #mobileMenu.is-open{display:flex !important;}
 

@@ -7,28 +7,47 @@ document.querySelectorAll('[style-hover]').forEach((el) => {
   el.addEventListener('mouseleave', () => el.setAttribute('style', baseStyle));
 });
 
-// Force every video to be muted + looping and keep it playing (autoplay policies
-// sometimes pause background video on tab/visibility changes).
-function playAllVideos() {
-  document.querySelectorAll('video').forEach((v) => {
-    v.muted = true;
-    v.defaultMuted = true;
-    v.volume = 0;
-    const p = v.play();
-    if (p && p.catch) p.catch(() => {});
-  });
-}
+// Keep all videos muted/looping/inline. The hero (with autoplay) plays right
+// away; below-the-fold videos are lazy-loaded by the observer further down.
 document.querySelectorAll('video').forEach((v) => {
   v.muted = true;
   v.defaultMuted = true;
   v.loop = true;
   v.playsInline = true;
   v.removeAttribute('controls');
-  v.addEventListener('loadeddata', playAllVideos, { once: true });
-  v.addEventListener('canplay', playAllVideos, { once: true });
 });
-playAllVideos();
-document.addEventListener('visibilitychange', () => { if (!document.hidden) playAllVideos(); });
+
+// Hero autoplay: nudge it in case the browser paused it, and resume when the
+// tab becomes visible again.
+const heroVideo = document.querySelector('#heroMedia video');
+function playHero() {
+  if (!heroVideo) return;
+  const p = heroVideo.play();
+  if (p && p.catch) p.catch(() => {});
+}
+playHero();
+document.addEventListener('visibilitychange', () => { if (!document.hidden) playHero(); });
+
+// Lazy-load below-the-fold videos: only fetch + play when they scroll near the
+// viewport, and pause when they leave (saves data, battery and CPU on mobile).
+const lazyVideos = document.querySelectorAll('video[data-lazy-video]');
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const v = entry.target;
+    if (entry.isIntersecting) {
+      const source = v.querySelector('source[data-src]');
+      if (source && !source.src) {
+        source.src = source.dataset.src;
+        v.load();
+      }
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {});
+    } else {
+      if (!v.paused) v.pause();
+    }
+  });
+}, { rootMargin: '200px 0px' });
+lazyVideos.forEach((v) => videoObserver.observe(v));
 
 // Mobile menu open/close.
 const mobileMenu = document.getElementById('mobileMenu');
@@ -63,8 +82,45 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Album reel: pause on hover, resume on leave.
-const reelWrap = document.getElementById('reelWrap');
+// Album reel driven by scroll: scrolling down slides the strip left, scrolling
+// up slides it right. Motion is smoothed and loops seamlessly (the strip holds
+// two identical halves, so we wrap the offset by one half's exact width).
 const reel = document.getElementById('reel');
-reelWrap.addEventListener('mouseenter', () => { reel.style.animationPlayState = 'paused'; });
-reelWrap.addEventListener('mouseleave', () => { reel.style.animationPlayState = 'running'; });
+let reelTarget = 0;
+let reelCurrent = 0;
+let lastReelY = window.scrollY || window.pageYOffset;
+let reelSetWidth = 0;
+const REEL_SPEED = 0.6; // px of strip travel per px scrolled
+
+function measureReel() {
+  // Exact width of the first half = left edge of the first image of the 2nd half.
+  const first = reel.children[0];
+  const secondHalfStart = reel.children[reel.children.length / 2];
+  reelSetWidth = (first && secondHalfStart)
+    ? secondHalfStart.offsetLeft - first.offsetLeft
+    : reel.scrollWidth / 2;
+}
+measureReel();
+window.addEventListener('load', measureReel);
+window.addEventListener('resize', measureReel);
+reel.querySelectorAll('img').forEach((img) => img.addEventListener('load', measureReel));
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY || window.pageYOffset;
+  reelTarget -= (y - lastReelY) * REEL_SPEED;
+  lastReelY = y;
+}, { passive: true });
+
+function wrapReel(x) {
+  if (!reelSetWidth) return x;
+  let m = x % reelSetWidth;
+  if (m > 0) m -= reelSetWidth;
+  return m;
+}
+
+function animateReel() {
+  reelCurrent += (reelTarget - reelCurrent) * 0.09;
+  reel.style.transform = `translateX(${wrapReel(reelCurrent)}px)`;
+  requestAnimationFrame(animateReel);
+}
+requestAnimationFrame(animateReel);
