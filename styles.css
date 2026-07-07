@@ -11,6 +11,8 @@ video,img{display:block;}
 
 @keyframes riseIn{from{opacity:0;transform:translateY(48px);}to{opacity:1;transform:none;}}
 @keyframes cueBob{0%,100%{transform:translateY(0);}50%{transform:translateY(7px);}}
+@keyframes reel{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion:reduce){#reel{animation:none !important;}}
 
 #mobileMenu.is-open{display:flex !important;}
 

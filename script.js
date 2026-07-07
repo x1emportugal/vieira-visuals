@@ -82,45 +82,9 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Album reel driven by scroll: scrolling down slides the strip left, scrolling
-// up slides it right. Motion is smoothed and loops seamlessly (the strip holds
-// two identical halves, so we wrap the offset by one half's exact width).
+// Album reel auto-rotates continuously (CSS animation). Pause on hover so the
+// viewer can linger on a frame; resumes on leave. Touch devices just let it run.
+const reelWrap = document.getElementById('reelWrap');
 const reel = document.getElementById('reel');
-let reelTarget = 0;
-let reelCurrent = 0;
-let lastReelY = window.scrollY || window.pageYOffset;
-let reelSetWidth = 0;
-const REEL_SPEED = 0.6; // px of strip travel per px scrolled
-
-function measureReel() {
-  // Exact width of the first half = left edge of the first image of the 2nd half.
-  const first = reel.children[0];
-  const secondHalfStart = reel.children[reel.children.length / 2];
-  reelSetWidth = (first && secondHalfStart)
-    ? secondHalfStart.offsetLeft - first.offsetLeft
-    : reel.scrollWidth / 2;
-}
-measureReel();
-window.addEventListener('load', measureReel);
-window.addEventListener('resize', measureReel);
-reel.querySelectorAll('img').forEach((img) => img.addEventListener('load', measureReel));
-
-window.addEventListener('scroll', () => {
-  const y = window.scrollY || window.pageYOffset;
-  reelTarget -= (y - lastReelY) * REEL_SPEED;
-  lastReelY = y;
-}, { passive: true });
-
-function wrapReel(x) {
-  if (!reelSetWidth) return x;
-  let m = x % reelSetWidth;
-  if (m > 0) m -= reelSetWidth;
-  return m;
-}
-
-function animateReel() {
-  reelCurrent += (reelTarget - reelCurrent) * 0.09;
-  reel.style.transform = `translateX(${wrapReel(reelCurrent)}px)`;
-  requestAnimationFrame(animateReel);
-}
-requestAnimationFrame(animateReel);
+reelWrap.addEventListener('mouseenter', () => { reel.style.animationPlayState = 'paused'; });
+reelWrap.addEventListener('mouseleave', () => { reel.style.animationPlayState = 'running'; });
