@@ -19,8 +19,6 @@ video,img{display:block;}
 @media (max-width:860px){
   [data-nav-links]{display:none !important;}
   [data-hamburger]{display:flex !important;}
-  [data-pfgrid]{display:flex !important;flex-direction:column !important;gap:58px !important;}
-  [data-case]{grid-column:auto !important;margin-top:0 !important;}
   [data-about-grid]{grid-template-columns:1fr !important;gap:44px !important;}
   [data-diffs]{grid-template-columns:1fr !important;}
   [data-hero-bottom]{flex-direction:column !important;align-items:flex-start !important;}
