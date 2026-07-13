@@ -4,6 +4,7 @@ const I18N = {
     'nav.home': 'Início', 'nav.work': 'Trabalhos', 'nav.about': 'Sobre', 'nav.contact': 'Contacto',
     'nav.search': 'Procurar projetos...',
     'hero.eyebrow': 'Filmes · Algarve',
+    'hero.title': 'Histórias que<br>Vale a Pena Ver<em>.</em>',
     'hero.sub': 'Filmes cinematográficos para marcas, restaurantes, beach clubs e eventos inesquecíveis.',
     'hero.cta1': 'Explorar trabalhos',
     'hero.scroll': 'Role para explorar',
@@ -26,6 +27,7 @@ const I18N = {
     'nav.home': 'Home', 'nav.work': 'Work', 'nav.about': 'About', 'nav.contact': 'Contact',
     'nav.search': 'Search projects...',
     'hero.eyebrow': 'Films · Algarve',
+    'hero.title': 'Stories Worth<br>Watching<em>.</em>',
     'hero.sub': 'Cinematic films for brands, restaurants, beach clubs and unforgettable events.',
     'hero.cta1': 'Explore work',
     'hero.scroll': 'Scroll to explore',
@@ -53,6 +55,10 @@ function applyLang() {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
     if (dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict[key]) el.innerHTML = dict[key];
   });
   document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
   document.querySelectorAll('.lang-toggle').forEach((b) => { b.textContent = lang === 'pt' ? 'EN' : 'PT'; });
