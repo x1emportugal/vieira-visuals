@@ -96,8 +96,8 @@ button{font-family:inherit;}
 .hero{position:relative;min-height:auto;display:flex;align-items:center;padding:132px clamp(20px,5vw,64px) 12px;overflow:visible;}
 @media (max-width:860px){.hero{min-height:88svh;}}
 .hero__glow{display:none;}
-/* painel-foto retangular quente (recorte preenche), sangra topo/direita, passa por cima dos cartões */
-.hero__figure{position:absolute;top:0;right:max(0px,calc(50vw - 720px));bottom:auto;width:min(38%,500px);aspect-ratio:600/790;height:auto;z-index:3;pointer-events:none;overflow:hidden;
+/* painel-foto começa abaixo da navegação fixa para manter o retrato inteiro visível */
+.hero__figure{position:absolute;top:88px;right:max(0px,calc(50vw - 720px));bottom:auto;width:min(38%,500px);aspect-ratio:1;height:auto;z-index:3;pointer-events:none;overflow:hidden;
   border-radius:0 0 0 26px;
   background:
     radial-gradient(60% 52% at 64% 38%,rgba(158,88,36,.6),transparent 72%),
@@ -105,7 +105,7 @@ button{font-family:inherit;}
   -webkit-mask-image:linear-gradient(to left,#000 84%,transparent 100%);
           mask-image:linear-gradient(to left,#000 84%,transparent 100%);
   animation:heroRise 1.3s cubic-bezier(.16,1,.3,1) both;}
-.hero__figure img{width:100%;height:100%;object-fit:cover;object-position:center top;
+.hero__figure img{width:100%;height:100%;object-fit:contain;object-position:center;
   filter:contrast(1.04) saturate(1.03);}
 .hero__figure::after{content:'';position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(to bottom,transparent 84%,rgba(6,6,6,.55) 100%);}
