@@ -2,244 +2,374 @@
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vieira Visuals — Filmes que ficam para sempre</title>
-<meta name="description" content="Filmes cinematográficos para marcas, restaurantes, beach clubs e eventos inesquecíveis. Filmes no Algarve há mais de 10 anos.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vieira Visuals | Videomaker no Algarve</title>
+<meta name="description" content="Vieira Visuals é a assinatura de Lucas Vieira. Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis e eventos no Algarve, há mais de dez anos.">
+<link rel="canonical" href="https://x1emportugal.github.io/vieira-visuals/">
+<meta name="theme-color" content="#0c0603">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Vieira Visuals">
 <meta property="og:url" content="https://x1emportugal.github.io/vieira-visuals/">
-<meta property="og:title" content="Vieira Visuals — Filmes que ficam para sempre">
-<meta property="og:description" content="Filmes cinematográficos para marcas, restaurantes, beach clubs e eventos inesquecíveis.">
+<meta property="og:title" content="Vieira Visuals | Visuais à medida de cada história">
+<meta property="og:description" content="Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis e eventos no Algarve.">
 <meta property="og:image" content="https://x1emportugal.github.io/vieira-visuals/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_PT">
+<meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vieira Visuals — Filmes que ficam para sempre">
-<meta name="twitter:description" content="Filmes cinematográficos para marcas, restaurantes, beach clubs e eventos inesquecíveis.">
+<meta name="twitter:title" content="Vieira Visuals | Visuais à medida de cada história">
+<meta name="twitter:description" content="Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis e eventos no Algarve.">
 <meta name="twitter:image" content="https://x1emportugal.github.io/vieira-visuals/og.jpg">
+
+<link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-aspect-ratio: 4/5)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-mobile.jpg" media="(max-aspect-ratio: 4/5)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260813-3">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261022-1">
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Vieira Visuals",
+  "slogan": "Visuais à medida de cada história.",
+  "description": "Videomaker no Algarve. Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis, eventos, agências e igrejas.",
+  "url": "https://x1emportugal.github.io/vieira-visuals/",
+  "image": "https://x1emportugal.github.io/vieira-visuals/og.jpg",
+  "logo": "https://x1emportugal.github.io/vieira-visuals/apple-touch-icon.png",
+  "telephone": "+351965014576",
+  "areaServed": { "@type": "AdministrativeArea", "name": "Algarve" },
+  "address": { "@type": "PostalAddress", "addressRegion": "Algarve", "addressCountry": "PT" },
+  "founder": { "@type": "Person", "name": "Lucas Vieira", "jobTitle": "Videomaker" },
+  "sameAs": ["https://www.instagram.com/vieiravisuals7/"],
+  "knowsAbout": ["Vídeo de marca", "Vídeo de eventos", "Filmagem com drone", "Casamentos", "Beach clubs"]
+}
+</script>
 </head>
 <body>
 
-<!-- ============ TOP NAV ============ -->
-<header class="topnav glass" id="topnav">
-  <a href="#topo" class="topnav__logo" aria-label="Vieira Visuals — início"><img src="assets/brand/logo-white.svg" alt="Vieira Visuals" width="34" height="34"></a>
-  <nav class="topnav__links" id="navLinks">
-    <a href="#topo" class="is-active" data-i18n="nav.home">Início</a>
-    <a href="#trabalhos" data-i18n="nav.work">Trabalhos</a>
-    <a href="#sobre" data-i18n="nav.about">Sobre</a>
-    <a href="#contato" data-i18n="nav.contact">Contacto</a>
+<a class="skip" href="#trabalhos" data-i18n="a11y.skip">Saltar para os trabalhos</a>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="nav" id="nav">
+  <a href="#topo" class="nav__logo" aria-label="Vieira Visuals, início">
+    <img src="assets/brand/logo-linho.svg" alt="Vieira Visuals" width="314" height="335">
+  </a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="#trabalhos" data-i18n="nav.work">trabalhos</a>
+    <a href="#processo" data-i18n="nav.process">processo</a>
+    <a href="#sobre" data-i18n="nav.about">sobre</a>
+    <a href="#contacto" data-i18n="nav.contact">contacto</a>
   </nav>
-  <div class="topnav__right">
-    <div class="topnav__search glass" aria-hidden="true">
-      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <span data-i18n="nav.search">Procurar projetos...</span>
-    </div>
-    <button class="lang-toggle glass" id="langToggle" aria-label="Switch language">EN</button>
-    <div class="topnav__avatar"><img src="assets/photos/lucas.jpg" alt="Lucas Vieira"></div>
-    <button class="topnav__burger" id="navBurger" aria-label="Menu">
-      <span></span><span></span>
-    </button>
+  <div class="nav__right">
+    <button class="lang" type="button" data-lang-toggle aria-label="Mudar para inglês">EN</button>
+    <a class="btn btn--amber btn--sm nav__cta" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener" data-i18n="nav.cta">WhatsApp</a>
+    <button class="nav__burger" type="button" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ============ MOBILE MENU ============ -->
-<div id="mobileMenu">
-  <div style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="topnav__logo"><img src="assets/brand/logo-white.svg" alt="Vieira Visuals" width="34" height="34"></span>
-    <button id="menuClose" aria-label="Fechar" style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text);font-size:1.2rem;cursor:pointer;line-height:1;">✕</button>
-  </div>
-  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;">
-    <a href="#topo" class="mobile-link" data-i18n="nav.home">Início</a>
-    <a href="#trabalhos" class="mobile-link" data-i18n="nav.work">Trabalhos</a>
-    <a href="#sobre" class="mobile-link" data-i18n="nav.about">Sobre</a>
-    <a href="#contato" class="mobile-link" style="color:var(--primary);" data-i18n="nav.contact">Contacto</a>
-  </div>
-  <div style="display:flex;gap:14px;align-items:center;">
-    <a class="btn btn-primary" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
-      WhatsApp
-    </a>
-    <button class="lang-toggle glass" id="langToggleMobile">EN</button>
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links" aria-label="Menu">
+    <a href="#trabalhos" data-i18n="nav.work">trabalhos</a>
+    <a href="#processo" data-i18n="nav.process">processo</a>
+    <a href="#sobre" data-i18n="nav.about">sobre</a>
+    <a href="#contacto" data-i18n="nav.contact">contacto</a>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn btn--amber" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener" data-i18n="cta.idea">Tirar a ideia do papel</a>
+    <img class="menu__sign" src="assets/brand/assinatura-linho.svg" alt="" width="495" height="218">
   </div>
 </div>
 
-<!-- ============ SIDEBAR ============ -->
-<aside class="sidebar glass" aria-label="Navegação rápida">
-  <a href="#topo" class="is-active" aria-label="Início"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></a>
-  <a href="#trabalhos" aria-label="Trabalhos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></a>
-  <a href="#sobre" aria-label="Sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></a>
-  <a href="#contato" aria-label="Contacto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5Z"/></svg></a>
-</aside>
+<main>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="topo">
-  <div class="hero__glow" aria-hidden="true"></div>
-  <div class="hero__figure" aria-hidden="true">
-    <img src="assets/photos/lucas.jpg" alt="" fetchpriority="high">
+<section class="hero" id="topo" aria-labelledby="heroTitle">
+  <div class="hero__media" aria-hidden="true">
+    <picture>
+      <source media="(max-aspect-ratio: 4/5)" srcset="assets/img/hero-mobile.jpg">
+      <img class="hero__poster" src="assets/img/hero.jpg" alt="" width="1600" height="900" fetchpriority="high">
+    </picture>
+    <video class="hero__video" id="heroVideo" muted loop playsinline preload="none"
+      data-src-wide="assets/video/hero-wide.mp4"
+      data-src-tall="assets/video/hero-mobile.mp4"></video>
   </div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="viewfinder" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
   <div class="hero__inner">
-    <div class="hero__content">
-      <div class="hero__eyebrow" data-i18n="hero.eyebrow">Filmes · Algarve</div>
-      <h1 id="heroTitle" data-i18n-html="hero.title">Filmes que ficam<br>para sempre<em>.</em></h1>
-      <p class="hero__sub" data-i18n="hero.sub">Filmes cinematográficos para marcas, restaurantes, beach clubs e eventos inesquecíveis.</p>
-      <div class="hero__ctas">
-        <a class="btn btn-primary" href="#trabalhos">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          <span data-i18n="hero.cta1">Explorar trabalhos</span>
-        </a>
-        <a class="btn btn-secondary" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
-          WhatsApp
-        </a>
+    <p class="label label--amber" data-i18n="hero.eyebrow">videomaker · algarve</p>
+    <h1 id="heroTitle" class="hero__title">
+      <span class="flag flag--tl" aria-hidden="true"></span>
+      <span data-i18n-html="hero.title">visuais à medida<br>de cada história<em>.</em></span>
+      <span class="flag flag--br" aria-hidden="true"></span>
+    </h1>
+    <p class="hero__sub" data-i18n="hero.sub">Vídeo com olhar de cinema para marcas, beach clubs, hotéis e eventos. Há mais de dez anos no Algarve.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--amber" href="#trabalhos">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>
+        <span data-i18n="hero.cta1">Ver trabalhos</span>
+      </a>
+      <a class="btn btn--ghost" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+        <span data-i18n="cta.idea">Tirar a ideia do papel</span>
+      </a>
+    </div>
+  </div>
+  <a class="hero__cue" href="#manifesto"><span data-i18n="hero.cue">explorar</span><i aria-hidden="true"></i></a>
+</section>
+
+<!-- ============ MANIFESTO (linho) ============ -->
+<section class="manifesto" id="manifesto" aria-labelledby="manifestoTitle">
+  <div class="wrap">
+    <p class="label" data-i18n="man.eyebrow">a vieira visuals</p>
+    <p class="manifesto__lead" data-reveal data-i18n="man.lead">Vídeo com padrão cinematográfico para quem quer elevar a imagem da sua marca no Algarve. Beach clubs, hotéis, restaurantes e negócios que já entendem o valor de uma produção cuidada.</p>
+    <h2 class="manifesto__big" id="manifestoTitle" data-reveal data-i18n-html="man.big">Não é sobre fazer mais.<br>É sobre fazer <em>certo</em>.</h2>
+    <div class="manifesto__foot" data-reveal>
+      <ul class="keywords" aria-label="Palavras da marca">
+        <li><i class="shape shape--circle" aria-hidden="true"></i><span data-i18n="kw.1">cinematográfico</span></li>
+        <li><i class="shape shape--square" aria-hidden="true"></i><span data-i18n="kw.2">sofisticado</span></li>
+        <li><i class="shape shape--diamond" aria-hidden="true"></i><span data-i18n="kw.3">atemporal</span></li>
+      </ul>
+      <img class="manifesto__sign" src="assets/brand/assinatura-mogno.svg" alt="Assinatura de Lucas Vieira" width="495" height="218" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRABALHOS ============ -->
+<section class="works" id="trabalhos" aria-labelledby="worksTitle">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="label label--amber" data-i18n="works.eyebrow">portefólio</p>
+        <h2 id="worksTitle" data-i18n="works.title">trabalhos</h2>
+      </div>
+      <p class="head__sub" data-i18n="works.sub">Uma seleção recente. Toque num vídeo para o ver com som.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filtrar trabalhos">
+      <button type="button" class="chip is-on" data-filter="all" aria-pressed="true" data-i18n="f.all">todos</button>
+      <button type="button" class="chip" data-filter="eventos" aria-pressed="false" data-i18n="f.events">eventos</button>
+      <button type="button" class="chip" data-filter="marcas" aria-pressed="false" data-i18n="f.brands">marcas</button>
+      <button type="button" class="chip" data-filter="drone" aria-pressed="false" data-i18n="f.drone">drone</button>
+      <button type="button" class="chip" data-filter="historias" aria-pressed="false" data-i18n="f.stories">histórias</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <article class="work" data-cat="eventos" data-o="h">
+        <button class="work__btn" type="button" data-video="assets/video/beach-club-sunset.mp4" data-key="w1">
+          <img src="assets/video/posters/beach-club-sunset.jpg" alt="Público a dançar ao pôr do sol num beach club" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w1.c">beach club</span><span class="work__title" data-i18n="w1.t">Sunset no beach club</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="marcas" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/restaurante-esplanada.mp4" data-key="w3">
+          <img src="assets/video/posters/restaurante-esplanada.jpg" alt="Cliente numa esplanada com um copo de vinho" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w3.c">restaurante</span><span class="work__title" data-i18n="w3.t">Esplanada com assinatura</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="drone" data-o="h">
+        <button class="work__btn" type="button" data-video="assets/video/drone-costa-algarve.mp4" data-key="w2" data-silent>
+          <img src="assets/video/posters/drone-costa-algarve.jpg" alt="Praia e falésias do Algarve filmadas de drone" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w2.c">drone</span><span class="work__title" data-i18n="w2.t">A costa algarvia vista de cima</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="eventos" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/espetaculo-palco-2.mp4" data-key="w5">
+          <img src="assets/video/posters/espetaculo-palco-2.jpg" alt="Bailarinos em palco durante um espetáculo" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w5.c">palco</span><span class="work__title" data-i18n="w5.t">Noite de espetáculo</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="historias" data-o="h">
+        <button class="work__btn" type="button" data-video="assets/video/casal-praia.mp4" data-key="w4">
+          <img src="assets/video/posters/casal-praia.jpg" alt="Casal na praia ao pôr do sol" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w4.c">histórias</span><span class="work__title" data-i18n="w4.t">À espera, ao pôr do sol</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="marcas" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/hotel-evento.mp4" data-key="w7">
+          <img src="assets/video/posters/hotel-evento.jpg" alt="Convidados numa esplanada de hotel com guarda-sóis amarelos" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w7.c">hotel</span><span class="work__title" data-i18n="w7.t">Tarde no hotel</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="eventos" data-o="h">
+        <button class="work__btn" type="button" data-video="assets/video/dj-set-por-do-sol.mp4" data-key="w6">
+          <img src="assets/video/posters/dj-set-por-do-sol.jpg" alt="DJ set em contraluz com o sol a entrar no beach club" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w6.c">beach club</span><span class="work__title" data-i18n="w6.t">DJ set em contraluz</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="historias" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/sessao-musical.mp4" data-key="w8">
+          <img src="assets/video/posters/sessao-musical.jpg" alt="Cantora a interpretar uma música ao microfone" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w8.c">música</span><span class="work__title" data-i18n="w8.t">Sessão ao vivo</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="eventos" data-o="h">
+        <button class="work__btn" type="button" data-video="assets/video/triatlo.mp4" data-key="w9">
+          <img src="assets/video/posters/triatlo.jpg" alt="Atletas a correr durante uma prova de triatlo" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w9.c">desporto</span><span class="work__title" data-i18n="w9.t">Triatlo, na linha da corrida</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="eventos" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/beach-club-lifestyle.mp4" data-key="w10">
+          <img src="assets/video/posters/beach-club-lifestyle.jpg" alt="Convidada num beach club ao fim da tarde" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w10.c">lifestyle</span><span class="work__title" data-i18n="w10.t">Luz dourada</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="marcas" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/gastronomia-evento.mp4" data-key="w11">
+          <img src="assets/video/posters/gastronomia-evento.jpg" alt="Chef a servir numa estação de cozinha ao ar livre" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w11.c">gastronomia</span><span class="work__title" data-i18n="w11.t">Cozinha ao vivo</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="eventos" data-o="h">
+        <button class="work__btn" type="button" data-video="assets/video/beach-club-multidao.mp4" data-key="w13">
+          <img src="assets/video/posters/beach-club-multidao.jpg" alt="Beach club cheio durante uma festa ao fim da tarde" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w13.c">beach club</span><span class="work__title" data-i18n="w13.t">Casa cheia</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="drone" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/drone-marina-olhao.mp4" data-key="w12" data-silent>
+          <img src="assets/video/posters/drone-marina-olhao.jpg" alt="Marina de Olhão vista de drone" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w12.c">drone</span><span class="work__title" data-i18n="w12.t">Marina de Olhão</span></span>
+        </button>
+      </article>
+      <article class="work" data-cat="eventos" data-o="v">
+        <button class="work__btn" type="button" data-video="assets/video/espetaculo-palco-1.mp4" data-key="w14">
+          <img src="assets/video/posters/espetaculo-palco-1.jpg" alt="Palco iluminado durante um espetáculo" width="720" height="1280" loading="lazy" decoding="async">
+          <span class="work__meta"><span class="work__tag" data-i18n="w14.c">palco</span><span class="work__title" data-i18n="w14.t">Em cena</span></span>
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESSO ============ -->
+<section class="process" id="processo" aria-labelledby="processTitle">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="label label--amber" data-i18n="proc.eyebrow">como trabalho</p>
+        <h2 id="processTitle" data-i18n="proc.title">três gestos, uma história.</h2>
       </div>
     </div>
-  </div>
-  <div class="hero__scrollcue"><span data-i18n="hero.scroll">Role para explorar</span> <i></i></div>
-</section>
-
-<!-- ============ CATEGORIAS ============ -->
-<section class="section" id="trabalhos">
-  <div class="section__head" data-reveal>
-    <div>
-      <div class="section__eyebrow" data-i18n="cat.eyebrow">Portefólio</div>
-      <h2 data-i18n="cat.title">Explorar categorias</h2>
-    </div>
-  </div>
-
-  <div class="cat-grid" data-reveal-stagger>
-    <button class="cat-card" data-lightbox="ph02,ph01" data-title-key="cat.sunset" style="background-image:url('assets/photos/ph02.jpg');background-position:center 65%;">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        <span data-i18n="cat.sunset">Fins de Tarde</span>
-      </span>
-    </button>
-    <button class="cat-card" data-lightbox="ph06,ph05" data-title-key="cat.beach" style="background-image:url('assets/photos/ph06.jpg');background-position:center 55%;">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M12 3C8 3 4.5 5 3 8c3 1.5 6.5 1.5 9 0 2.5 1.5 6 1.5 9 0-1.5-3-5-5-9-5Z"/></svg>
-        <span data-i18n="cat.beach">Beach Clubs</span>
-      </span>
-    </button>
-    <button class="cat-card" data-lightbox="cat-dj,ph09" data-title-key="cat.djs" style="background-image:url('assets/photos/cat-dj.jpg');">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="4" height="7" rx="2"/><rect x="17" y="14" width="4" height="7" rx="2"/></svg>
-        <span data-i18n="cat.djs">DJs</span>
-      </span>
-    </button>
-    <button class="cat-card" data-lightbox="ph07,ph04" data-title-key="cat.rest" style="background-image:url('assets/photos/ph07.jpg');">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v4a8 8 0 0 1-16 0V3ZM12 15v6M8 21h8"/></svg>
-        <span data-i18n="cat.rest">Restaurantes</span>
-      </span>
-    </button>
-    <button class="cat-card" data-lightbox="ph08,ph03" data-title-key="cat.wed" style="background-image:url('assets/photos/ph08.jpg');background-position:center 30%;">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21Z"/></svg>
-        <span data-i18n="cat.wed">Casamentos</span>
-      </span>
-    </button>
-    <button class="cat-card" data-lightbox="ph09,ph07" data-title-key="cat.events" style="background-image:url('assets/photos/ph09.jpg');background-position:center 45%;">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M6.5 6.5 10 10M17.5 6.5 14 10M6.5 17.5 10 14M17.5 17.5 14 14"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
-        <span data-i18n="cat.events">Filmes com Drone</span>
-      </span>
-    </button>
-    <button class="cat-card" data-lightbox="ph05,ph01" data-title-key="cat.night" style="background-image:url('assets/photos/ph05.jpg');background-position:center 40%;">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1Z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M19 6.5a8 8 0 0 1 0 11"/></svg>
-        <span data-i18n="cat.night">Comerciais</span>
-      </span>
-    </button>
-    <button class="cat-card" data-lightbox="ph04,ph01" data-title-key="cat.brands" style="background-image:url('assets/photos/ph04.jpg');background-position:center 60%;">
-      <span class="cat-card__label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2.5h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13.5" r="3.2"/></svg>
-        <span data-i18n="cat.brands">Fotografia</span>
-      </span>
-    </button>
-  </div>
-</section>
-
-<!-- ============ EM MOVIMENTO (VIDEO PREVIEWS) ============ -->
-<section class="section" id="movimento">
-  <div class="section__head" data-reveal>
-    <div>
-      <div class="section__eyebrow" data-i18n="motion.eyebrow">Previews</div>
-      <h2 data-i18n="motion.title">Em movimento</h2>
-    </div>
-  </div>
-  <div class="video-grid" data-reveal-stagger>
-    <div class="video-card" data-hoverplay>
-      <video muted loop playsinline preload="none" poster="assets/videos/posters/preview-festa.jpg"><source data-src="assets/videos/preview-festa.mp4" type="video/mp4"></video>
-    </div>
-    <div class="video-card" data-hoverplay>
-      <video muted loop playsinline preload="none" poster="assets/videos/posters/preview-dj.jpg"><source data-src="assets/videos/preview-dj.mp4" type="video/mp4"></video>
-    </div>
+    <ol class="steps" data-reveal-stagger>
+      <li class="step">
+        <svg class="step__icon" viewBox="0 0 209 96" aria-hidden="true"><path d="M46.45,96h-27.1L0,0h76.65l19.35,46.45h-49.55v49.55Z"/><path d="M209,96l-96-19.35v-27.1h49.55V0l46.45,19.35v76.65Z"/></svg>
+        <span class="step__n">01</span>
+        <h3 data-i18n="proc.1.t">olhar primeiro</h3>
+        <p data-i18n="proc.1.d">Antes de carregar em gravar, ouço. Quero perceber a marca, o momento e as pessoas. O filme começa nessa conversa.</p>
+      </li>
+      <li class="step">
+        <svg class="step__icon step__icon--line" viewBox="0 0 144 163" aria-hidden="true"><path d="M7,39.6V7h32.6"/><path d="M136.6,123v32.6h-32.6"/><path d="M39.6,155.6H7v-32.6"/><path d="M104,7h32.6v32.6"/></svg>
+        <span class="step__n">02</span>
+        <h3 data-i18n="proc.2.t">enquadrar com intenção</h3>
+        <p data-i18n="proc.2.d">Na rodagem escolho com propósito o que merece ficar no plano. Captação em 4K e drone quando a história pede.</p>
+      </li>
+      <li class="step">
+        <svg class="step__icon" viewBox="0 0 508 135" aria-hidden="true"><path d="M47.59,114.89c26.28,0,47.59-21.31,47.59-47.59s-21.31-47.59-47.59-47.59S0,41.02,0,67.3c0,26.28,21.31,47.59,47.59,47.59Z"/><path d="M232.68,114.89V19.71h-95.18v95.18h95.18Z"/><path d="M322.59,134.61l67.3-67.31L322.59,0l-67.3,67.3,67.3,67.31Z"/><path d="M460.04,114.89c26.28,0,47.59-21.31,47.59-47.59s-21.31-47.59-47.59-47.59-47.59,21.31-47.59,47.59,21.31,47.59,47.59,47.59Z"/></svg>
+        <span class="step__n">03</span>
+        <h3 data-i18n="proc.3.t">entregar à medida</h3>
+        <p data-i18n="proc.3.d">Montagem, cor e som pensados para onde o vídeo vai viver: site, redes sociais ou ecrã de evento, com versões para cada formato.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ============ SOBRE ============ -->
-<section class="section" id="sobre">
-  <article class="about" data-reveal>
-    <div class="about__media">
-      <img src="assets/photos/lucas-cut.svg" alt="Lucas Vieira" loading="lazy" decoding="async">
-    </div>
-    <div class="about__content">
-      <p class="about__eyebrow" data-i18n="about.eyebrow">Sobre</p>
-      <h2 class="about__name">Lucas Vieira<span>.</span></h2>
-      <span class="about__rule" aria-hidden="true"></span>
-      <div class="about__bio">
-        <p data-i18n="about.p1">Há mais de 10 anos a filmar o Algarve — de casamentos a beach clubs, de marcas a fins de tarde que mereciam cinema. Cada evento acontece uma vez só; o meu trabalho é fazer com que possa ser revisto mil vezes, com a emoção da primeira.</p>
-        <p data-i18n="about.p2">Contrata uma pessoa, não uma linha de montagem: do primeiro contacto ao ficheiro final, é a mesma cabeça a pensar o seu filme.</p>
+<section class="about" id="sobre" aria-labelledby="aboutTitle">
+  <div class="wrap">
+    <figure class="about__photo" data-reveal>
+      <picture>
+        <source media="(max-width: 700px)" srcset="assets/img/lucas-a-filmar-960.jpg">
+        <img src="assets/img/lucas-a-filmar.jpg" alt="Lucas Vieira a filmar com uma câmara de cinema, de costas, com a t-shirt Vieira Visuals" width="1600" height="900" loading="lazy" decoding="async">
+      </picture>
+    </figure>
+    <div class="about__grid">
+      <div class="about__id" data-reveal>
+        <p class="label label--amber" data-i18n="about.eyebrow">sobre</p>
+        <h2 id="aboutTitle">Lucas Vieira<em>.</em></h2>
+        <img class="about__sign" src="assets/brand/assinatura-linho.svg" alt="" width="495" height="218" loading="lazy">
       </div>
-      <span class="about__rule about__rule--b" aria-hidden="true"></span>
-      <div class="about__stats">
-        <div><b>10+</b><span data-i18n="about.s1">anos de experiência</span></div>
-        <div><b>Algarve</b><span data-i18n="about.s2">base de operação</span></div>
-        <div><b>4K</b><span data-i18n="about.s3">captação e entrega</span></div>
+      <div class="about__text" data-reveal>
+        <p data-i18n="about.p1">Mais de dez anos de estrada em casamentos, eventos e vídeos de marca no Algarve. O meu trabalho nasce de me adaptar a qualquer contexto e público: empresas, agências, igrejas e marcas pessoais.</p>
+        <p data-i18n="about.p2">Cada projeto recebe o mesmo cuidado técnico e o mesmo olhar de cinema, seja qual for a escala ou o orçamento. Contrata uma pessoa, não uma linha de montagem.</p>
+        <dl class="stats">
+          <div><dt>10+</dt><dd data-i18n="about.s1">anos de estrada</dd></div>
+          <div><dt>Algarve</dt><dd data-i18n="about.s2">base de operação</dd></div>
+          <div><dt>4K</dt><dd data-i18n="about.s3">captação e entrega</dd></div>
+        </dl>
+        <p class="label" data-i18n="about.for">para quem filmo</p>
+        <ul class="tags">
+          <li data-i18n="t.1">marcas</li><li data-i18n="t.2">agências</li><li data-i18n="t.3">beach clubs</li>
+          <li data-i18n="t.4">hotéis</li><li data-i18n="t.5">restaurantes</li><li data-i18n="t.6">eventos</li>
+          <li data-i18n="t.7">casamentos</li><li data-i18n="t.8">igrejas</li>
+        </ul>
       </div>
     </div>
-  </article>
+  </div>
 </section>
 
-<!-- ============ CONTATO ============ -->
-<section class="section contact" id="contato">
-  <div data-reveal>
-    <div class="section__eyebrow" data-i18n="contact.eyebrow">Contacto</div>
-    <h2><span data-i18n="contact.title">Vamos criar algo que ninguém mais faria</span> <em style="font-style:normal;color:var(--primary);" data-i18n="contact.titleAccent">assim?</em></h2>
-    <div class="contact__ctas">
-      <a class="btn btn-primary" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
-        WhatsApp
+<!-- ============ CONTACTO ============ -->
+<section class="contact" id="contacto" aria-labelledby="contactTitle">
+  <img class="contact__bg" src="assets/img/lucas-retrato.jpg" alt="" width="1300" height="1003" loading="lazy" decoding="async">
+  <div class="contact__shade" aria-hidden="true"></div>
+  <div class="wrap contact__inner" data-reveal>
+    <p class="label label--amber" data-i18n="contact.eyebrow">contacto</p>
+    <h2 id="contactTitle" data-i18n-html="contact.title">vamos criar filmes que ficam <em>para sempre</em>?</h2>
+    <p class="contact__sub" data-i18n="contact.sub">Conte-me a sua ideia. Eu ajudo a tirá-la do papel.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--amber" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+        <span data-i18n="cta.idea">Tirar a ideia do papel</span>
       </a>
-      <a class="btn btn-secondary" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Queria%20agendar%20uma%20reuni%C3%A3o." target="_blank" rel="noopener" data-i18n="contact.cta2">Agendar uma reunião</a>
+      <a class="btn btn--ghost" href="https://www.instagram.com/vieiravisuals7/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @vieiravisuals7
+      </a>
     </div>
   </div>
-
-  <footer class="footer">
-    <div class="footer__brand">VIEIRA<span style="color:var(--primary);">·</span>VISUALS</div>
-    <a href="https://www.instagram.com/vieiravisuals7/" target="_blank" rel="noopener">Instagram</a>
-    <div class="footer__meta">© 2026 — Lucas Vieira</div>
-  </footer>
 </section>
 
-<!-- ============ LIGHTBOX ============ -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox__backdrop"></div>
-  <div class="lightbox__frame">
-    <img class="lightbox__img" id="lightboxImg" alt="">
-    <div class="lightbox__title glass" id="lightboxTitle"></div>
-    <button class="lightbox__btn lightbox__close glass" id="lightboxClose" aria-label="Fechar">✕</button>
-    <button class="lightbox__btn lightbox__prev glass" id="lightboxPrev" aria-label="Anterior">‹</button>
-    <button class="lightbox__btn lightbox__next glass" id="lightboxNext" aria-label="Seguinte">›</button>
-    <div class="lightbox__dots" id="lightboxDots"></div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <img class="footer__logo" src="assets/brand/logo-linho.svg" alt="Vieira Visuals" width="314" height="335" loading="lazy">
+    <p class="footer__slogan" data-i18n="footer.slogan">visuais à medida de cada história.</p>
+    <ul class="footer__links">
+      <li><a href="https://wa.me/351965014576" target="_blank" rel="noopener">+351 965 014 576</a></li>
+      <li><a href="https://www.instagram.com/vieiravisuals7/" target="_blank" rel="noopener">Instagram</a></li>
+    </ul>
+    <p class="footer__meta">© 2026 Vieira Visuals · Algarve, Portugal</p>
   </div>
+</footer>
+
+<!-- ============ PLAYER ============ -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="playerTitle" aria-hidden="true">
+  <div class="player__backdrop" data-close></div>
+  <figure class="player__frame">
+    <video id="playerVideo" controls playsinline preload="metadata"></video>
+    <figcaption class="player__cap"><span class="work__tag" id="playerTag"></span><span id="playerTitle"></span></figcaption>
+  </figure>
+  <button class="player__btn player__close" type="button" data-close aria-label="Fechar">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <button class="player__btn player__prev" type="button" id="playerPrev" aria-label="Vídeo anterior">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+  </button>
+  <button class="player__btn player__next" type="button" id="playerNext" aria-label="Vídeo seguinte">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+  </button>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=20261022-1" defer></script>
 </body>
 </html>

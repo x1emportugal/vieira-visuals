@@ -2,3 +2,6 @@
 _serve.py
 node_modules/
 *.log
+# material fonte da marca (pesado, fica fora do repositório público)
+*.zip
+IDV-*.pdf

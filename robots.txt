@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /preview-clean/
+
+Sitemap: https://x1emportugal.github.io/vieira-visuals/sitemap.xml

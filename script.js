@@ -1,185 +1,271 @@
-/* ================= i18n (PT-PT padrão / EN) ================= */
-const I18N = {
-  pt: {
-    'nav.home': 'Início', 'nav.work': 'Trabalhos', 'nav.about': 'Sobre', 'nav.contact': 'Contacto',
-    'nav.search': 'Procurar projetos...',
-    'hero.eyebrow': 'Filmes · Algarve',
-    'hero.title': 'Filmes que ficam<br>para sempre<em>.</em>',
-    'hero.sub': 'Filmes cinematográficos para marcas, restaurantes, beach clubs e eventos inesquecíveis.',
-    'hero.cta1': 'Explorar trabalhos',
-    'hero.scroll': 'Desliza para explorar',
-    'cat.eyebrow': 'Portefólio', 'cat.title': 'Explorar categorias',
-    'cat.sub': 'Cada tipo de história pede uma linguagem. Escolha a sua.',
-    'cat.sunset': 'Fins de Tarde', 'cat.beach': 'Beach Clubs', 'cat.djs': 'DJs', 'cat.rest': 'Restaurantes',
-    'cat.wed': 'Casamentos', 'cat.events': 'Filmes com Drone', 'cat.night': 'Comerciais', 'cat.brands': 'Fotografia',
-    'motion.eyebrow': 'Previews', 'motion.title': 'Em movimento',
-    'motion.sub': 'Passe o cursor para dar play — como numa sala de cinema só sua.',
-    'motion.v1': 'Beach Club · Aftermovie', 'motion.v2': 'Sunset Set · DJ',
-    'about.eyebrow': 'Sobre',
-    'about.p1': 'Há mais de 10 anos a filmar o Algarve — de casamentos a beach clubs, de marcas a fins de tarde que mereciam cinema. Cada evento acontece uma vez só; o meu trabalho é fazer com que possa ser revisto mil vezes, com a emoção da primeira.',
-    'about.p2': 'Contrata uma pessoa, não uma linha de montagem: do primeiro contacto ao ficheiro final, é a mesma cabeça a pensar o seu filme.',
-    'about.s1': 'anos de experiência', 'about.s2': 'base de operação', 'about.s3': 'captação e entrega',
-    'contact.eyebrow': 'Contacto',
-    'contact.title': 'Vamos criar algo que ninguém mais faria', 'contact.titleAccent': 'assim?',
-    'contact.cta2': 'Agendar uma reunião',
-  },
-  en: {
-    'nav.home': 'Home', 'nav.work': 'Work', 'nav.about': 'About', 'nav.contact': 'Contact',
-    'nav.search': 'Search projects...',
-    'hero.eyebrow': 'Films · Algarve',
-    'hero.title': 'Films that last<br>forever<em>.</em>',
-    'hero.sub': 'Cinematic films for brands, restaurants, beach clubs and unforgettable events.',
-    'hero.cta1': 'Explore work',
-    'hero.scroll': 'Scroll to explore',
-    'cat.eyebrow': 'Portfolio', 'cat.title': 'Explore categories',
-    'cat.sub': 'Every kind of story calls for its own language. Choose yours.',
-    'cat.sunset': 'Sunset Sessions', 'cat.beach': 'Beach Clubs', 'cat.djs': 'DJs', 'cat.rest': 'Restaurants',
-    'cat.wed': 'Weddings', 'cat.events': 'Drone Films', 'cat.night': 'Commercials', 'cat.brands': 'Photography',
-    'motion.eyebrow': 'Previews', 'motion.title': 'In motion',
-    'motion.sub': 'Hover to play — like a private screening room.',
-    'motion.v1': 'Beach Club · Aftermovie', 'motion.v2': 'Sunset Set · DJ',
-    'about.eyebrow': 'About',
-    'about.p1': 'Filming the Algarve for over 10 years — from weddings to beach clubs, from brands to golden hours that deserved cinema. Every event happens only once; my job is to make it worth rewatching a thousand times, with the emotion of the first.',
-    'about.p2': 'You hire a person, not an assembly line: from the first call to the final file, it is the same mind shaping your film.',
-    'about.s1': 'years of experience', 'about.s2': 'based in', 'about.s3': 'capture & delivery',
-    'contact.eyebrow': 'Contact',
-    'contact.title': 'Let’s create something nobody else would make', 'contact.titleAccent': 'like this?',
-    'contact.cta2': 'Book a meeting',
-  }
+/* ==========================================================
+   Vieira Visuals
+   O português vive no HTML (é o que o Google lê). Aqui só está
+   a tradução inglesa e o comportamento da página.
+   ========================================================== */
+const $ = (s, root = document) => root.querySelector(s);
+const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+
+/* ================= i18n ================= */
+const EN = {
+  'a11y.skip': 'Skip to the work',
+  'nav.work': 'work', 'nav.process': 'process', 'nav.about': 'about', 'nav.contact': 'contact', 'nav.cta': 'WhatsApp',
+  'cta.idea': 'Bring your idea to life',
+  'hero.eyebrow': 'videomaker · algarve',
+  'hero.title': 'visuals tailored<br>to every story<em>.</em>',
+  'hero.sub': 'Video with a cinema eye for brands, beach clubs, hotels and events. Over ten years in the Algarve.',
+  'hero.cta1': 'See the work', 'hero.cue': 'explore',
+  'man.eyebrow': 'vieira visuals',
+  'man.lead': 'Cinematic standard video for those who want to raise their brand in the Algarve. Beach clubs, hotels, restaurants and businesses that already know the value of a careful production.',
+  'man.big': 'It’s not about doing more.<br>It’s about doing it <em>right</em>.',
+  'kw.1': 'cinematic', 'kw.2': 'sophisticated', 'kw.3': 'timeless',
+  'works.eyebrow': 'portfolio', 'works.title': 'work',
+  'works.sub': 'A recent selection. Tap a video to watch it with sound.',
+  'f.all': 'all', 'f.events': 'events', 'f.brands': 'brands', 'f.drone': 'drone', 'f.stories': 'stories',
+  'w1.c': 'beach club', 'w1.t': 'Beach club sunset',
+  'w2.c': 'drone', 'w2.t': 'The Algarve coast from above',
+  'w3.c': 'restaurant', 'w3.t': 'A terrace with a signature',
+  'w4.c': 'stories', 'w4.t': 'Waiting, at sunset',
+  'w5.c': 'stage', 'w5.t': 'Show night',
+  'w6.c': 'beach club', 'w6.t': 'DJ set against the light',
+  'w7.c': 'hotel', 'w7.t': 'Afternoon at the hotel',
+  'w8.c': 'music', 'w8.t': 'Live session',
+  'w9.c': 'sport', 'w9.t': 'Triathlon, on the run course',
+  'w10.c': 'lifestyle', 'w10.t': 'Golden light',
+  'w11.c': 'food', 'w11.t': 'Live cooking',
+  'w12.c': 'drone', 'w12.t': 'Olhão marina',
+  'w13.c': 'beach club', 'w13.t': 'Full house',
+  'w14.c': 'stage', 'w14.t': 'On stage',
+  'proc.eyebrow': 'how I work', 'proc.title': 'three gestures, one story.',
+  'proc.1.t': 'look first',
+  'proc.1.d': 'Before I hit record, I listen. I want to understand the brand, the moment and the people. The film starts in that conversation.',
+  'proc.2.t': 'frame with intent',
+  'proc.2.d': 'On set I choose, on purpose, what deserves to stay in the shot. Filmed in 4K, with a drone when the story calls for it.',
+  'proc.3.t': 'deliver to measure',
+  'proc.3.d': 'Editing, colour and sound designed for where the video will live: website, social media or an event screen, with versions for every format.',
+  'about.eyebrow': 'about',
+  'about.p1': 'Over ten years on the road filming weddings, events and brand videos in the Algarve. My work comes from adapting to any context and audience: companies, agencies, churches and personal brands.',
+  'about.p2': 'Every project gets the same technical care and the same cinema eye, whatever the scale or the budget. You hire a person, not an assembly line.',
+  'about.s1': 'years on the road', 'about.s2': 'home base', 'about.s3': 'capture and delivery',
+  'about.for': 'who I film for',
+  't.1': 'brands', 't.2': 'agencies', 't.3': 'beach clubs', 't.4': 'hotels',
+  't.5': 'restaurants', 't.6': 'events', 't.7': 'weddings', 't.8': 'churches',
+  'contact.eyebrow': 'contact',
+  'contact.title': 'shall we make films that last <em>forever</em>?',
+  'contact.sub': 'Tell me your idea. I’ll help you bring it to life.',
+  'footer.slogan': 'visuals tailored to every story.',
+};
+const UI = {
+  pt: { watch: 'Ver vídeo: ', langTo: 'Mudar para inglês', menuOpen: 'Abrir menu', menuClose: 'Fechar menu',
+        close: 'Fechar', prev: 'Vídeo anterior', next: 'Vídeo seguinte', title: 'Vieira Visuals | Videomaker no Algarve' },
+  en: { watch: 'Watch video: ', langTo: 'Switch to Portuguese', menuOpen: 'Open menu', menuClose: 'Close menu',
+        close: 'Close', prev: 'Previous video', next: 'Next video', title: 'Vieira Visuals | Videomaker in the Algarve' },
 };
 
-let lang = localStorage.getItem('vv-lang') || 'pt';
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch { /* sem armazenamento: segue sem memorizar */ } },
+};
+
+// guarda o português original de cada elemento antes de qualquer troca
+$$('[data-i18n]').forEach((el) => { el.dataset.pt = el.textContent; });
+$$('[data-i18n-html]').forEach((el) => { el.dataset.ptHtml = el.innerHTML; });
+
+let lang = store.get('vv-lang') === 'en' ? 'en' : 'pt';
 
 function applyLang() {
-  const dict = I18N[lang];
-  document.querySelectorAll('[data-i18n]').forEach((el) => {
-    const key = el.getAttribute('data-i18n');
-    if (dict[key]) el.textContent = dict[key];
+  const en = lang === 'en';
+  $$('[data-i18n]').forEach((el) => {
+    const v = en ? EN[el.dataset.i18n] : el.dataset.pt;
+    if (v != null) el.textContent = v;
   });
-  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
-    const key = el.getAttribute('data-i18n-html');
-    if (dict[key]) el.innerHTML = dict[key];
+  $$('[data-i18n-html]').forEach((el) => {
+    const v = en ? EN[el.dataset.i18nHtml] : el.dataset.ptHtml;
+    if (v != null) el.innerHTML = v;
   });
-  document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
-  document.querySelectorAll('.lang-toggle').forEach((b) => { b.textContent = lang === 'pt' ? 'EN' : 'PT'; });
-  localStorage.setItem('vv-lang', lang);
+  const ui = UI[lang];
+  document.documentElement.lang = en ? 'en' : 'pt-PT';
+  document.title = ui.title;
+  $$('[data-lang-toggle]').forEach((b) => { b.textContent = en ? 'PT' : 'EN'; b.setAttribute('aria-label', ui.langTo); });
+  $$('.work__btn').forEach((b) => { b.setAttribute('aria-label', ui.watch + $('.work__title', b).textContent); });
+  $('.player__close').setAttribute('aria-label', ui.close);
+  $('#playerPrev').setAttribute('aria-label', ui.prev);
+  $('#playerNext').setAttribute('aria-label', ui.next);
+  syncBurgerLabel();
 }
-document.querySelectorAll('.lang-toggle, #langToggle, #langToggleMobile').forEach(() => {});
-['langToggle', 'langToggleMobile'].forEach((id) => {
-  const b = document.getElementById(id);
-  if (b) b.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; applyLang(); });
-});
-applyLang();
+$$('[data-lang-toggle]').forEach((b) => b.addEventListener('click', () => {
+  lang = lang === 'pt' ? 'en' : 'pt';
+  store.set('vv-lang', lang);
+  applyLang();
+}));
 
-/* ================= Reveal on scroll ================= */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-in');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('[data-reveal],[data-reveal-stagger]').forEach((el) => revealObserver.observe(el));
+/* ================= cabeçalho ================= */
+const nav = $('#nav');
+const onScroll = () => nav.classList.toggle('is-solid', window.scrollY > 40);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
 
-/* ================= Mobile menu ================= */
-const mobileMenu = document.getElementById('mobileMenu');
-document.getElementById('navBurger').addEventListener('click', () => mobileMenu.classList.add('is-open'));
-document.getElementById('menuClose').addEventListener('click', () => mobileMenu.classList.remove('is-open'));
-mobileMenu.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', () => mobileMenu.classList.remove('is-open')));
+const burger = $('#burger');
+const menu = $('#menu');
+function syncBurgerLabel() {
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-label', open ? UI[lang].menuClose : UI[lang].menuOpen);
+}
+function setMenu(open) {
+  burger.setAttribute('aria-expanded', String(open));
+  menu.classList.toggle('is-open', open);
+  menu.setAttribute('aria-hidden', String(!open));
+  document.body.classList.toggle('is-locked', open);
+  syncBurgerLabel();
+  if (open) $('a', menu).focus();
+}
+burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+$$('a', menu).forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
-/* ================= Nav ativo por seção ================= */
-const sections = ['topo', 'trabalhos', 'movimento', 'sobre', 'contato']
-  .map((id) => document.getElementById(id)).filter(Boolean);
-const navAnchors = [...document.querySelectorAll('.topnav__links a, .sidebar a')];
+// link ativo conforme a secção visível
+const navLinks = $$('.nav__links a');
 const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    const id = entry.target.id === 'movimento' ? 'trabalhos' : entry.target.id;
-    navAnchors.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+  entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
   });
-}, { rootMargin: '-40% 0px -55% 0px' });
-sections.forEach((s) => sectionObserver.observe(s));
+}, { rootMargin: '-45% 0px -50% 0px' });
+['trabalhos', 'processo', 'sobre', 'contacto'].forEach((id) => { const s = document.getElementById(id); if (s) sectionObserver.observe(s); });
 
-/* ================= Lightbox rotativo (estilo Apple) ================= */
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightboxImg');
-const lbTitle = document.getElementById('lightboxTitle');
-const lbDots = document.getElementById('lightboxDots');
-let lbPhotos = [];
-let lbIndex = 0;
-let lbTimer = null;
+/* ================= hero em vídeo ================= */
+const heroVideo = $('#heroVideo');
+const tallScreen = matchMedia('(max-aspect-ratio: 4/5)');
+const saveData = navigator.connection && navigator.connection.saveData;
+const heroSrc = () => (tallScreen.matches ? heroVideo.dataset.srcTall : heroVideo.dataset.srcWide);
 
-function lbRender() {
-  lbImg.src = 'assets/photos/' + lbPhotos[lbIndex] + '.jpg';
-  [...lbDots.children].forEach((d, i) => d.classList.toggle('on', i === lbIndex));
+function startHero() {
+  if (reduceMotion.matches || saveData) return; // fica o poster, sem gastar dados
+  heroVideo.addEventListener('playing', () => heroVideo.classList.add('is-playing'));
+  heroVideo.src = heroSrc();
+  heroVideo.play().catch(() => {});
 }
-function lbGo(dir) {
-  lbIndex = (lbIndex + dir + lbPhotos.length) % lbPhotos.length;
-  lbRender();
-  lbRestartTimer();
-}
-function lbRestartTimer() {
-  clearInterval(lbTimer);
-  if (lbPhotos.length > 1) lbTimer = setInterval(() => lbGo(1), 4000);
-}
-function lbOpen(photos, title) {
-  lbPhotos = photos;
-  lbIndex = 0;
-  lbTitle.textContent = title;
-  lbDots.innerHTML = photos.map(() => '<i></i>').join('');
-  lbRender();
-  lightbox.classList.add('is-open');
-  lightbox.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('lb-lock');
-  lbRestartTimer();
-}
-function lbClose() {
-  lightbox.classList.remove('is-open');
-  lightbox.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('lb-lock');
-  clearInterval(lbTimer);
-}
-document.querySelectorAll('[data-lightbox]').forEach((card) => {
-  card.addEventListener('click', () => {
-    const photos = card.getAttribute('data-lightbox').split(',');
-    const key = card.getAttribute('data-title-key');
-    lbOpen(photos, I18N[lang][key] || '');
-  });
+// o poster pinta primeiro; o vídeo só começa a descarregar depois da página carregada
+if (document.readyState === 'complete') startHero();
+else window.addEventListener('load', () => setTimeout(startHero, 150), { once: true });
+
+tallScreen.addEventListener('change', () => {
+  if (!heroVideo.getAttribute('src')) return;
+  heroVideo.classList.remove('is-playing');
+  heroVideo.src = heroSrc();
+  heroVideo.play().catch(() => {});
 });
-document.getElementById('lightboxClose').addEventListener('click', lbClose);
-document.getElementById('lightboxPrev').addEventListener('click', () => lbGo(-1));
-document.getElementById('lightboxNext').addEventListener('click', () => lbGo(1));
-lightbox.querySelector('.lightbox__backdrop').addEventListener('click', lbClose);
+// pausa o hero quando sai do ecrã
+new IntersectionObserver(([e]) => {
+  if (!heroVideo.getAttribute('src')) return;
+  if (e.isIntersecting) heroVideo.play().catch(() => {}); else heroVideo.pause();
+}).observe($('#topo'));
+
+/* ================= entrada suave ================= */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('is-in');
+    revealObserver.unobserve(e.target);
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+$$('[data-reveal],[data-reveal-stagger]').forEach((el) => revealObserver.observe(el));
+
+/* ================= filtros ================= */
+const chips = $$('.chip');
+const works = $$('.work');
+chips.forEach((chip) => chip.addEventListener('click', () => {
+  const f = chip.dataset.filter;
+  chips.forEach((c) => { const on = c === chip; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', String(on)); });
+  works.forEach((w) => w.classList.toggle('is-hidden', f !== 'all' && w.dataset.cat !== f));
+}));
+
+/* ================= pré-visualização ao passar o rato ================= */
+function previewVideo(btn) {
+  let v = $('video', btn);
+  if (!v) {
+    v = document.createElement('video');
+    v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('aria-hidden', 'true');
+    v.src = btn.dataset.video;
+    v.addEventListener('playing', () => { if (btn.matches(':hover')) btn.classList.add('is-playing'); });
+    $('img', btn).after(v);
+  }
+  return v;
+}
+$$('.work__btn').forEach((btn) => {
+  btn.addEventListener('pointerenter', () => {
+    if (!finePointer.matches || reduceMotion.matches) return;
+    previewVideo(btn).play().catch(() => {});
+  });
+  btn.addEventListener('pointerleave', () => {
+    const v = $('video', btn);
+    if (v) v.pause();
+    btn.classList.remove('is-playing');
+  });
+  btn.addEventListener('click', () => openPlayer(btn));
+});
+
+/* ================= leitor ================= */
+const player = $('#player');
+const pv = $('#playerVideo');
+let queue = [];
+let index = 0;
+let lastFocus = null;
+
+function renderPlayer() {
+  const btn = queue[index];
+  pv.poster = $('img', btn).currentSrc || $('img', btn).src;
+  pv.src = btn.dataset.video;
+  pv.muted = btn.hasAttribute('data-silent');
+  $('#playerTag').textContent = $('.work__tag', btn).textContent;
+  $('#playerTitle').textContent = $('.work__title', btn).textContent;
+  const many = queue.length > 1;
+  $('#playerPrev').hidden = !many;
+  $('#playerNext').hidden = !many;
+  pv.play().catch(() => { pv.muted = true; pv.play().catch(() => {}); });
+}
+function openPlayer(btn) {
+  queue = $$('.work:not(.is-hidden) .work__btn');
+  index = Math.max(0, queue.indexOf(btn));
+  lastFocus = btn;
+  $$('.work__btn video').forEach((v) => v.pause());
+  renderPlayer();
+  player.classList.add('is-open');
+  player.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('is-locked');
+  $('.player__close').focus();
+}
+function closePlayer() {
+  pv.pause();
+  pv.removeAttribute('src');
+  pv.load(); // para a descarga do ficheiro
+  player.classList.remove('is-open');
+  player.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('is-locked');
+  if (lastFocus) lastFocus.focus();
+}
+function step(dir) {
+  index = (index + dir + queue.length) % queue.length;
+  renderPlayer();
+}
+$$('[data-close]', player).forEach((el) => el.addEventListener('click', closePlayer));
+$('#playerPrev').addEventListener('click', () => step(-1));
+$('#playerNext').addEventListener('click', () => step(1));
+
 document.addEventListener('keydown', (e) => {
-  if (!lightbox.classList.contains('is-open')) return;
-  if (e.key === 'Escape') lbClose();
-  if (e.key === 'ArrowLeft') lbGo(-1);
-  if (e.key === 'ArrowRight') lbGo(1);
+  if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); burger.focus(); return; }
+  if (!player.classList.contains('is-open')) return;
+  if (e.key === 'Escape') closePlayer();
+  else if (e.key === 'ArrowLeft') step(-1);
+  else if (e.key === 'ArrowRight') step(1);
+  else if (e.key === 'Tab') { // mantém o foco dentro do leitor
+    const f = $$('button:not([hidden]), video', player);
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });
 
-/* ================= Vídeos: play no hover (estilo Netflix) ================= */
-document.querySelectorAll('[data-hoverplay]').forEach((card) => {
-  const video = card.querySelector('video');
-  const source = video.querySelector('source[data-src]');
-  function ensureLoaded() {
-    if (source && !source.src) { source.src = source.dataset.src; video.load(); }
-  }
-  function play() {
-    ensureLoaded();
-    video.muted = true;
-    const p = video.play();
-    if (p && p.catch) p.catch(() => {
-      video.addEventListener('canplay', () => { video.play().catch(() => {}); }, { once: true });
-    });
-    card.classList.add('is-playing');
-  }
-  function pause() {
-    if (!video.paused) video.pause();
-    card.classList.remove('is-playing');
-  }
-  card.addEventListener('mouseenter', play);
-  card.addEventListener('mouseleave', pause);
-  // Touch: toque alterna play/pause
-  card.addEventListener('touchstart', () => { video.paused ? play() : pause(); }, { passive: true });
-});
+applyLang();
