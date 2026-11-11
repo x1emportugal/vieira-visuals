@@ -56,5 +56,5 @@ python3 -m http.server 4174
 
 ## Publicação
 
-GitHub Pages a partir da branch `main`: https://x1emportugal.github.io/vieira-visuals/
+GitHub Pages a partir da branch `main`: https://vieiravisual.pt/ (e https://vieira-visuals.vercel.app/)
 A versão anterior ficou guardada na tag `v1-premium-dark`.

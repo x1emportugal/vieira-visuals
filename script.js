@@ -55,6 +55,17 @@ const EN = {
   'contact.eyebrow': 'contact',
   'contact.title': 'shall we make films that last <em>forever</em>?',
   'contact.sub': 'Tell me your idea. I’ll help you bring it to life.',
+  'faq.eyebrow': 'frequently asked questions', 'faq.title': 'the essentials, in a few words.',
+  'faq.1.q': 'Who is Vieira Visuals?',
+  'faq.1.a': 'Vieira Visuals is the signature of Lucas Vieira, a videomaker in the Algarve with over ten years on the road. He makes cinematic-standard video for brands, hotels, beach clubs, restaurants, events and weddings.',
+  'faq.2.q': 'What kinds of video do you make?',
+  'faq.2.a': 'Brand video, event video, weddings and personal stories, filmed in 4K with aerial drone footage when the story calls for it. Editing, colour and sound are designed for where the video will be seen: website, social media or an event screen.',
+  'faq.3.q': 'Do you work across the whole Algarve?',
+  'faq.3.a': 'Yes. The Algarve is home base and where most projects are filmed: from beach clubs and hotels to restaurants, marinas and live shows.',
+  'faq.4.q': 'Who do you work for?',
+  'faq.4.a': 'Brands, agencies, beach clubs, hotels, restaurants, event organisers, churches and personal brands. Every project gets the same technical care and the same cinema eye, whatever the scale.',
+  'faq.5.q': 'How do I ask for a quote?',
+  'faq.5.a': 'Just tell your idea by WhatsApp (+351 965 014 576) or by email (trabalhecomvieira2@gmail.com). Lucas replies and helps bring it to life.',
   'footer.slogan': 'visuals tailored to every story.',
 };
 const UI = {

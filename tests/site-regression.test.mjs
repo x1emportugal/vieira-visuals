@@ -58,4 +58,19 @@ assert.match(html, /rel="canonical"/);
 assert.match(html, /application\/ld\+json/);
 assert.ok(existsSync(new URL('robots.txt', root)) && existsSync(new URL('sitemap.xml', root)), 'faltam robots.txt ou sitemap.xml');
 
+// Domínio oficial e novas secções de SEO/GEO.
+const robots = read('robots.txt'), sitemap = read('sitemap.xml');
+for (const [nome, txt] of [['index.html', html], ['robots.txt', robots], ['sitemap.xml', sitemap]]) {
+  assert.doesNotMatch(txt, /github\.io/, `${nome} ainda aponta para o github.io`);
+}
+assert.match(html, /<link rel="canonical" href="https:\/\/vieiravisual\.pt\/">/, 'canonical tem de ser o domínio oficial');
+assert.match(sitemap, /<loc>https:\/\/vieiravisual\.pt\/<\/loc>/, 'o sitemap tem de listar o domínio oficial');
+assert.match(robots, /Sitemap: https:\/\/vieiravisual\.pt\/sitemap\.xml/);
+for (const m of html.matchAll(/data-i18n="(faq\.[\w.]+)"/g)) {
+  assert.ok(js.includes(`'${m[1]}'`), `sem tradução inglesa para ${m[1]}`);
+}
+const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+assert.ok(ld['@graph'].some((n) => n.email === 'trabalhecomvieira2@gmail.com'), 'falta o email nos dados estruturados');
+assert.match(html, /href="mailto:trabalhecomvieira2@gmail\.com"/, 'falta o link de email');
+
 console.log(`site regression checks passed (${refs.size} ficheiros locais verificados)`);

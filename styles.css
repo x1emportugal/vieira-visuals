@@ -187,6 +187,9 @@ h2 em,h1 em{font-style:normal;color:var(--ambar);}
   linear-gradient(180deg,rgba(12,6,3,.25) 0%,rgba(12,6,3,.55) 45%,rgba(12,6,3,.96) 100%),
   linear-gradient(90deg,rgba(76,22,0,.55) 0%,rgba(76,22,0,0) 70%);}
 .contact h2{max-width:13ch;}
+.contact__mail{margin-top:14px;font-weight:600;}
+.contact__mail a{border-bottom:1px solid var(--ambar);}
+.contact__mail a:hover{color:var(--ambar);}
 .contact__sub{margin-top:22px;max-width:42ch;font-size:1.1rem;color:var(--text-2);}
 
 /* ---------- rodapé ---------- */
@@ -194,6 +197,12 @@ h2 em,h1 em{font-style:normal;color:var(--ambar);}
 .footer__inner{display:grid;gap:22px;justify-items:start;}
 .footer__logo{height:64px;width:auto;}
 .footer__slogan{font-size:14px;letter-spacing:.22em;text-transform:lowercase;color:var(--text-2);}
+.faq{background:var(--bg);padding:88px 0 92px;}
+.faq__list{display:grid;gap:14px;}
+.faq__item{padding:24px 24px 26px;border-radius:var(--r);background:rgba(76,22,0,.28);border:1px solid rgba(229,232,211,.12);}
+.faq__item dt{font-size:1.2rem;font-weight:700;text-transform:none;margin-bottom:10px;color:var(--linho);}
+.faq__item dd{color:var(--text-2);max-width:70ch;}
+@media (min-width:900px){.faq{padding:130px 0 140px;}.faq__list{grid-template-columns:repeat(2,1fr);gap:18px;}}
 .footer__links{display:flex;flex-wrap:wrap;gap:10px 22px;font-weight:600;}
 .footer__links a:hover{color:var(--ambar);}
 .footer__meta{font-size:13px;color:var(--text-3);}

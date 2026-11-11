@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vieira Visuals | Videomaker no Algarve</title>
-<meta name="description" content="Vieira Visuals é a assinatura de Lucas Vieira. Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis e eventos no Algarve, há mais de dez anos.">
-<link rel="canonical" href="https://x1emportugal.github.io/vieira-visuals/">
+<meta name="description" content="Vieira Visuals, de Lucas Vieira: videomaker no Algarve com mais de dez anos de estrada. Vídeo cinematográfico em 4K e drone para marcas, hotéis, beach clubs, eventos e casamentos.">
+<link rel="canonical" href="https://vieiravisual.pt/">
 <meta name="theme-color" content="#0c0603">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -13,10 +13,10 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vieira Visuals">
-<meta property="og:url" content="https://x1emportugal.github.io/vieira-visuals/">
+<meta property="og:url" content="https://vieiravisual.pt/">
 <meta property="og:title" content="Vieira Visuals | Visuais à medida de cada história">
 <meta property="og:description" content="Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis e eventos no Algarve.">
-<meta property="og:image" content="https://x1emportugal.github.io/vieira-visuals/og.jpg">
+<meta property="og:image" content="https://vieiravisual.pt/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_PT">
@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Vieira Visuals | Visuais à medida de cada história">
 <meta name="twitter:description" content="Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis e eventos no Algarve.">
-<meta name="twitter:image" content="https://x1emportugal.github.io/vieira-visuals/og.jpg">
+<meta name="twitter:image" content="https://vieiravisual.pt/og.jpg">
 
 <link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-aspect-ratio: 4/5)" fetchpriority="high">
 <link rel="preload" as="image" href="assets/img/hero-mobile.jpg" media="(max-aspect-ratio: 4/5)" fetchpriority="high">
@@ -37,19 +37,64 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Vieira Visuals",
-  "slogan": "Visuais à medida de cada história.",
-  "description": "Videomaker no Algarve. Vídeo com padrão cinematográfico para marcas, beach clubs, hotéis, eventos, agências e igrejas.",
-  "url": "https://x1emportugal.github.io/vieira-visuals/",
-  "image": "https://x1emportugal.github.io/vieira-visuals/og.jpg",
-  "logo": "https://x1emportugal.github.io/vieira-visuals/apple-touch-icon.png",
-  "telephone": "+351965014576",
-  "areaServed": { "@type": "AdministrativeArea", "name": "Algarve" },
-  "address": { "@type": "PostalAddress", "addressRegion": "Algarve", "addressCountry": "PT" },
-  "founder": { "@type": "Person", "name": "Lucas Vieira", "jobTitle": "Videomaker" },
-  "sameAs": ["https://www.instagram.com/vieiravisuals7/"],
-  "knowsAbout": ["Vídeo de marca", "Vídeo de eventos", "Filmagem com drone", "Casamentos", "Beach clubs"]
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://vieiravisual.pt/#negocio",
+      "name": "Vieira Visuals",
+      "alternateName": "Vieira Visuals · Lucas Vieira, videomaker no Algarve",
+      "slogan": "Visuais à medida de cada história.",
+      "description": "Videomaker no Algarve. Vídeo com padrão cinematográfico, em 4K e com drone, para marcas, beach clubs, hotéis, restaurantes, eventos, agências, casamentos e igrejas.",
+      "url": "https://vieiravisual.pt/",
+      "image": "https://vieiravisual.pt/og.jpg",
+      "logo": "https://vieiravisual.pt/apple-touch-icon.png",
+      "telephone": "+351965014576",
+      "email": "trabalhecomvieira2@gmail.com",
+      "inLanguage": ["pt-PT", "en"],
+      "address": { "@type": "PostalAddress", "addressRegion": "Algarve", "addressCountry": "PT" },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Algarve" },
+        { "@type": "Country", "name": "Portugal" }
+      ],
+      "founder": { "@id": "https://vieiravisual.pt/#lucas" },
+      "sameAs": ["https://www.instagram.com/vieiravisuals7/"],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+351965014576",
+        "email": "trabalhecomvieira2@gmail.com",
+        "availableLanguage": ["Portuguese", "English"]
+      }],
+      "knowsAbout": ["Vídeo de marca", "Vídeo de eventos", "Filmagem com drone", "Vídeo de casamento", "Vídeo para beach clubs", "Vídeo para hotéis e restaurantes"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de vídeo",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vídeo de marca e institucional" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vídeo de eventos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Filmagem com drone" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vídeo de casamento" } }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://vieiravisual.pt/#lucas",
+      "name": "Lucas Vieira",
+      "jobTitle": "Videomaker",
+      "worksFor": { "@id": "https://vieiravisual.pt/#negocio" },
+      "email": "trabalhecomvieira2@gmail.com",
+      "sameAs": ["https://www.instagram.com/vieiravisuals7/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vieiravisual.pt/#site",
+      "url": "https://vieiravisual.pt/",
+      "name": "Vieira Visuals",
+      "inLanguage": "pt-PT",
+      "publisher": { "@id": "https://vieiravisual.pt/#negocio" }
+    }
+  ]
 }
 </script>
 </head>
@@ -317,6 +362,40 @@
   </div>
 </section>
 
+<!-- ============ PERGUNTAS ============ -->
+<section class="faq" id="perguntas" aria-labelledby="faqTitle">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="label label--amber" data-i18n="faq.eyebrow">perguntas frequentes</p>
+        <h2 id="faqTitle" data-i18n="faq.title">o essencial, em poucas palavras.</h2>
+      </div>
+    </div>
+    <dl class="faq__list">
+      <div class="faq__item">
+        <dt data-i18n="faq.1.q">Quem é a Vieira Visuals?</dt>
+        <dd data-i18n="faq.1.a">A Vieira Visuals é a assinatura de Lucas Vieira, videomaker no Algarve com mais de dez anos de estrada. Faz vídeo com padrão cinematográfico para marcas, hotéis, beach clubs, restaurantes, eventos e casamentos.</dd>
+      </div>
+      <div class="faq__item">
+        <dt data-i18n="faq.2.q">Que tipos de vídeo faz?</dt>
+        <dd data-i18n="faq.2.a">Vídeo de marca, vídeo de eventos, casamentos e histórias pessoais, com captação em 4K e imagens aéreas de drone quando a história o pede. A montagem, a cor e o som são pensados para onde o vídeo vai ser visto: site, redes sociais ou ecrã de evento.</dd>
+      </div>
+      <div class="faq__item">
+        <dt data-i18n="faq.3.q">Trabalha em todo o Algarve?</dt>
+        <dd data-i18n="faq.3.a">Sim. A base é o Algarve e é onde filma a maior parte dos projetos: de beach clubs e hotéis a restaurantes, marinas e espetáculos.</dd>
+      </div>
+      <div class="faq__item">
+        <dt data-i18n="faq.4.q">Para quem trabalha?</dt>
+        <dd data-i18n="faq.4.a">Para marcas, agências, beach clubs, hotéis, restaurantes, organizadores de eventos, igrejas e marcas pessoais. Cada projeto recebe o mesmo cuidado técnico e o mesmo olhar de cinema, seja qual for a escala.</dd>
+      </div>
+      <div class="faq__item">
+        <dt data-i18n="faq.5.q">Como peço um orçamento?</dt>
+        <dd data-i18n="faq.5.a">Basta contar a ideia por WhatsApp (+351 965 014 576) ou por email (trabalhecomvieira2@gmail.com). O Lucas responde e ajuda a tirá-la do papel.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
 <!-- ============ CONTACTO ============ -->
 <section class="contact" id="contacto" aria-labelledby="contactTitle">
   <img class="contact__bg" src="assets/img/lucas-retrato.jpg" alt="" width="1300" height="1003" loading="lazy" decoding="async">
@@ -325,6 +404,7 @@
     <p class="label label--amber" data-i18n="contact.eyebrow">contacto</p>
     <h2 id="contactTitle" data-i18n-html="contact.title">vamos criar filmes que ficam <em>para sempre</em>?</h2>
     <p class="contact__sub" data-i18n="contact.sub">Conte-me a sua ideia. Eu ajudo a tirá-la do papel.</p>
+    <p class="contact__mail"><a href="mailto:trabalhecomvieira2@gmail.com">trabalhecomvieira2@gmail.com</a></p>
     <div class="hero__ctas">
       <a class="btn btn--amber" href="https://wa.me/351965014576?text=Ol%C3%A1%20Lucas!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.6c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
@@ -346,6 +426,7 @@
     <p class="footer__slogan" data-i18n="footer.slogan">visuais à medida de cada história.</p>
     <ul class="footer__links">
       <li><a href="https://wa.me/351965014576" target="_blank" rel="noopener">+351 965 014 576</a></li>
+      <li><a href="mailto:trabalhecomvieira2@gmail.com">trabalhecomvieira2@gmail.com</a></li>
       <li><a href="https://www.instagram.com/vieiravisuals7/" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
     <p class="footer__meta">© 2026 Vieira Visuals · Algarve, Portugal</p>
