@@ -12,4 +12,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://vieiravisual.pt/sitemap.xml
+Sitemap: https://vieiravisuals.com/sitemap.xml

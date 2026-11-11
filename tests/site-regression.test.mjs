@@ -63,9 +63,9 @@ const robots = read('robots.txt'), sitemap = read('sitemap.xml');
 for (const [nome, txt] of [['index.html', html], ['robots.txt', robots], ['sitemap.xml', sitemap]]) {
   assert.doesNotMatch(txt, /github\.io/, `${nome} ainda aponta para o github.io`);
 }
-assert.match(html, /<link rel="canonical" href="https:\/\/vieiravisual\.pt\/">/, 'canonical tem de ser o domínio oficial');
-assert.match(sitemap, /<loc>https:\/\/vieiravisual\.pt\/<\/loc>/, 'o sitemap tem de listar o domínio oficial');
-assert.match(robots, /Sitemap: https:\/\/vieiravisual\.pt\/sitemap\.xml/);
+assert.match(html, /<link rel="canonical" href="https:\/\/vieiravisuals\.com\/">/, 'canonical tem de ser o domínio oficial');
+assert.match(sitemap, /<loc>https:\/\/vieiravisuals\.com\/<\/loc>/, 'o sitemap tem de listar o domínio oficial');
+assert.match(robots, /Sitemap: https:\/\/vieiravisuals\.com\/sitemap\.xml/);
 for (const m of html.matchAll(/data-i18n="(faq\.[\w.]+)"/g)) {
   assert.ok(js.includes(`'${m[1]}'`), `sem tradução inglesa para ${m[1]}`);
 }
