@@ -399,3 +399,12 @@ body.is-locked{overflow:hidden;}
 .show__card > img{z-index:0;}
 .show__video{z-index:1;}
 .show__card::after{z-index:1;}
+
+/* barra do carrossel: pastilhas numa só linha; no telemóvel só o formato (a categoria já está no cartão) */
+.show__pills{flex-wrap:nowrap;min-width:0;}
+.show__pills li{white-space:nowrap;}
+@media (max-width:600px){
+  #showTag{display:none;}
+  .show__bar{width:100%;justify-content:space-between;}
+  .show__pills li{font-size:12px;padding:9px 14px;}
+}
