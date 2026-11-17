@@ -94,7 +94,7 @@ h2 em,h1 em{font-style:normal;color:var(--ambar);}
 .viewfinder i:nth-child(3){bottom:0;left:0;border-bottom-width:2px;border-left-width:2px;}
 .viewfinder i:nth-child(4){bottom:0;right:0;border-bottom-width:2px;border-right-width:2px;}
 .hero__inner{position:relative;width:100%;max-width:1280px;margin:0 auto;padding:0 calc(var(--gutter) + 8px);}
-.hero__title{position:relative;display:inline-block;margin-top:.62em;font-size:clamp(2.5rem,11.5vw,6.4rem);line-height:1;font-weight:700;letter-spacing:.005em;text-transform:lowercase;text-wrap:balance;}
+.hero__title{position:relative;display:inline-block;margin-top:.62em;font-size:clamp(2rem,8.6vw,5rem);line-height:1.04;font-weight:700;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance;}
 /* bandeiras do "hand framing", geometria exata do SVG da marca */
 .flag{position:absolute;width:.4em;height:.4em;background:var(--linho);}
 .flag--tl{top:-.52em;left:-.08em;clip-path:polygon(48.39% 100%,20.16% 100%,0 0,79.84% 0,100% 48.39%,48.39% 48.39%);}
@@ -119,7 +119,7 @@ h2 em,h1 em{font-style:normal;color:var(--ambar);}
 .shape{width:12px;height:12px;background:var(--oliva);flex:none;}
 .shape--circle{border-radius:50%;}
 .shape--diamond{width:10px;height:10px;transform:rotate(45deg);}
-.manifesto__sign{width:150px;height:auto;}
+.manifesto__sign{width:min(420px,78vw);height:auto;margin:0 -6% -92px auto;}
 
 /* ---------- cabeçalhos de secção ---------- */
 .head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:34px;}
@@ -170,7 +170,7 @@ h2 em,h1 em{font-style:normal;color:var(--ambar);}
 .about__photo img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;}
 .about__grid{display:grid;gap:32px;margin-top:40px;}
 .about__id h2{font-size:clamp(2.4rem,10vw,4.6rem);text-transform:none;}
-.about__sign{width:170px;height:auto;margin-top:22px;opacity:.85;}
+.about__sign{width:min(300px,70vw);height:auto;margin-top:6px;opacity:.9;}
 .about__text p{color:var(--text-2);font-size:1.05rem;}
 .about__text p + p{margin-top:16px;}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:36px 0;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -241,7 +241,7 @@ body.is-locked{overflow:hidden;}
 }
 @media (min-width:900px){
   :root{--nav-h:84px;--gutter:48px;--notch:28px;}
-  .nav__links{display:flex;gap:34px;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:lowercase;}
+  .nav__links{display:flex;gap:40px;font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
   .nav__links a{color:var(--text-2);transition:color .2s;}
   .nav__links a:hover,.nav__links a.is-active{color:var(--linho);}
   .nav__cta{display:inline-flex;}
@@ -290,3 +290,11 @@ body.is-locked{overflow:hidden;}
   *,*::before,*::after{animation:none !important;transition-duration:.01ms !important;}
   .js [data-reveal],.js [data-reveal-stagger] > *{opacity:1;transform:none;}
 }
+
+/* ---------- caixa alta pedida pelo Lucas ---------- */
+.menu__links a,#worksTitle,.works .label,.contact .label,.contact .hero__ctas .btn{text-transform:uppercase;}
+.nav__cta{font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;min-height:46px;padding:0 24px;}
+.contact h2{max-width:16ch;}
+.about__photo img{object-position:50% 22%;}
+.contact__bg{object-position:68% 30%;}
+.manifesto{overflow:hidden;}
