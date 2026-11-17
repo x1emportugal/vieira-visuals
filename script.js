@@ -303,7 +303,7 @@ if (showEl) {
   });
   const rv = document.createElement('video');
   rv.className = 'show__video';
-  rv.muted = true; rv.defaultMuted = true; rv.loop = true; rv.playsInline = true; rv.autoplay = true; rv.preload = 'auto';
+  rv.muted = true; rv.defaultMuted = true; rv.loop = false; rv.playsInline = true; rv.autoplay = true; rv.preload = 'auto';
   ['muted', 'playsinline', 'webkit-playsinline', 'autoplay', 'loop'].forEach((a) => rv.setAttribute(a, ''));
   rv.setAttribute('aria-hidden', 'true');
   let list = items;
@@ -311,12 +311,18 @@ if (showEl) {
   let inView = false;
   let hold = false;
   let timer = 0;
-  const AUTO = 7000;
+  const STALL = 6000; // se o vídeo não arrancar (autoplay bloqueado), o carrossel avança na mesma
   const pad = (n) => String(n).padStart(2, '0');
   const schedule = () => {
     clearTimeout(timer);
-    if (inView && !hold && !player.classList.contains('is-open')) timer = setTimeout(() => show(cur + 1), AUTO);
+    if (inView && !hold && !player.classList.contains('is-open')) timer = setTimeout(stall, STALL);
   };
+  function stall() {
+    if (hold) return;
+    if (rv.paused || rv.readyState < 3) show(cur + 1); else timer = setTimeout(stall, 2000);
+  }
+  // enquanto o rato está por cima o vídeo repete; quando sai, volta a avançar no fim
+  const setHold = (on) => { hold = on; rv.loop = on; if (on) clearTimeout(timer); else schedule(); };
   const playIfVisible = () => {
     if (!inView || player.classList.contains('is-open')) return;
     rv.muted = true;
@@ -371,6 +377,7 @@ if (showEl) {
   }
   function openWithSound() { clearTimeout(timer); rv.pause(); openPlayer(list[cur].btn); }
 
+  rv.addEventListener('ended', () => { if (!hold) show(cur + 1); });
   rv.addEventListener('playing', () => rv.parentElement && rv.parentElement.classList.add('is-ready'));
   // mover o vídeo para outro cartão interrompe o play(): voltar a tentar quando o ficheiro estiver pronto
   rv.addEventListener('loadeddata', playIfVisible);
@@ -414,10 +421,10 @@ if (showEl) {
     schedule();
   }, { threshold: 0.35 }).observe(deck);
   // pausa o avanço automático enquanto o visitante está a ver ou a mexer
-  deck.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { hold = true; clearTimeout(timer); } });
-  deck.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') { hold = false; schedule(); } });
-  showEl.addEventListener('focusin', () => { hold = true; clearTimeout(timer); });
-  showEl.addEventListener('focusout', () => { hold = false; schedule(); });
+  deck.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') setHold(true); });
+  deck.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') setHold(false); });
+  showEl.addEventListener('focusin', () => setHold(true));
+  showEl.addEventListener('focusout', () => setHold(false));
   document.addEventListener('playerclose', () => { playIfVisible(); schedule(); });
   // se o browser bloquear o autoplay (ex.: poupança de bateria), arranca no primeiro gesto do visitante
   const unlock = () => {
