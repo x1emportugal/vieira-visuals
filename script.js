@@ -23,7 +23,7 @@ const EN = {
   'kw.1': 'cinematic', 'kw.2': 'sophisticated', 'kw.3': 'timeless',
   'works.eyebrow': 'get to know us', 'works.title': 'portfolio',
   'works.sub': 'A recent selection. Tap a video to watch it with sound.',
-  'reel.sound': 'watch with sound',
+  'show.want': 'I want a video like this', 'show.sound': 'Watch with sound',
   'f.all': 'all', 'f.events': 'events', 'f.brands': 'brands', 'f.drone': 'drone', 'f.stories': 'stories',
   'w1.c': 'beach club', 'w1.t': 'Beach club sunset',
   'w2.c': 'drone', 'w2.t': 'The Algarve coast from above',
@@ -283,110 +283,124 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-/* ================= portfólio: timeline de montagem ================= */
-const reel = $('#reel');
-if (reel) {
-  const stage = $('#reelStage');
-  const rv = $('.reel__video', stage);
-  const rbg = $('.reel__bg', stage);
-  const clipsBox = $('#reelClips');
-  const scroller = clipsBox.parentElement;
+/* ================= portfólio: cartões em profundidade ================= */
+const showEl = $('#show');
+if (showEl) {
+  const deck = $('#showDeck');
+  const bg = $('#showBg');
+  const T = {
+    pt: { v: 'redes sociais · 9:16', h: 'site e YouTube · 16:9', msg: (t) => `Olá Lucas! Vi o vídeo "${t}" no site e queria um vídeo assim para o meu negócio.` },
+    en: { v: 'social media · 9:16', h: 'website and YouTube · 16:9', msg: (t) => `Hi Lucas! I saw the video "${t}" on the website and I'd like a video like this for my business.` },
+  };
   const items = works.map((w) => {
     const btn = $('.work__btn', w);
     const img = $('img', btn);
-    const clip = document.createElement('button');
-    clip.type = 'button';
-    clip.className = 'reel__clip';
-    clip.dataset.o = w.dataset.o;
-    clip.setAttribute('role', 'tab');
-    clip.innerHTML = `<img src="${img.getAttribute('src')}" alt="" loading="lazy" decoding="async"><span class="reel__cliplabel"></span><i class="reel__playhead" aria-hidden="true"></i>`;
-    clipsBox.append(clip);
-    return { w, btn, img, clip };
+    const card = document.createElement('div');
+    card.className = 'show__card';
+    card.innerHTML = `<img src="${img.getAttribute('src')}" alt="" loading="lazy" decoding="async"><span class="show__n"></span><span class="show__cap"><span class="show__title"></span><span class="show__tag"></span></span>`;
+    deck.append(card);
+    return { w, btn, img, card };
   });
+  const rv = document.createElement('video');
+  rv.className = 'show__video';
+  rv.muted = true; rv.playsInline = true; rv.preload = 'metadata';
+  rv.setAttribute('aria-hidden', 'true');
   let list = items;
   let cur = 0;
   let inView = false;
   const pad = (n) => String(n).padStart(2, '0');
-  const timecode = (t) => {
-    const s = Math.floor(t);
-    return `${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}:${pad(Math.floor((t % 1) * 25))}`;
-  };
   const playIfVisible = () => { if (inView && !reduceMotion.matches && !player.classList.contains('is-open')) rv.play().catch(() => {}); };
 
+  function layout() {
+    const n = list.length;
+    items.forEach((it) => {
+      const k = list.indexOf(it);
+      let o = k - cur;
+      if (k < 0) { it.card.hidden = true; return; }
+      if (o > n / 2) o -= n;
+      if (o < -n / 2) o += n;
+      const a = Math.abs(o);
+      it.card.hidden = a > 3;
+      it.card.style.setProperty('--o', o);
+      it.card.style.setProperty('--a', a);
+      it.card.style.zIndex = String(10 - a);
+      it.card.classList.toggle('is-on', o === 0);
+      it.card.setAttribute('aria-hidden', String(o !== 0));
+      $('.show__n', it.card).textContent = `${pad(k + 1)} / ${pad(n)}`;
+    });
+  }
   function show(i, play = true) {
     if (!list.length) return;
     cur = (i + list.length) % list.length;
     const it = list[cur];
-    items.forEach((x) => {
-      const on = x === it;
-      x.clip.classList.toggle('is-on', on);
-      x.clip.setAttribute('aria-selected', String(on));
-      x.clip.tabIndex = on ? 0 : -1;
-    });
-    stage.dataset.o = it.w.dataset.o;
-    rbg.src = it.img.getAttribute('src');
-    $('#reelN').textContent = pad(cur + 1);
-    $('#reelTotal').textContent = pad(list.length);
-    $('#reelTag').textContent = $('.work__tag', it.btn).textContent;
-    $('#reelTitle').textContent = $('.work__title', it.btn).textContent;
+    layout();
+    bg.src = it.img.getAttribute('src');
+    const tag = $('.work__tag', it.btn).textContent;
+    const title = $('.work__title', it.btn).textContent;
+    $('#showTag').textContent = tag;
+    $('#showFmt').textContent = T[lang][it.w.dataset.o === 'v' ? 'v' : 'h'];
+    $('#showWant').href = `https://wa.me/351965014576?text=${encodeURIComponent(T[lang].msg(title))}`;
     if (rv.dataset.src !== it.btn.dataset.video) {
-      stage.classList.remove('is-ready');
+      it.card.classList.remove('is-ready');
       rv.dataset.src = it.btn.dataset.video;
       rv.poster = it.img.getAttribute('src');
       rv.src = it.btn.dataset.video;
-      $('#reelTc').textContent = timecode(0);
     }
-    const c = it.clip;
-    scroller.scrollTo({ left: c.offsetLeft - scroller.clientWidth / 2 + c.clientWidth / 2, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    it.card.prepend(rv);
     if (play) playIfVisible();
   }
   function labels() {
     items.forEach((it) => {
-      $('.reel__cliplabel', it.clip).textContent = $('.work__tag', it.btn).textContent;
-      it.clip.setAttribute('aria-label', $('.work__title', it.btn).textContent);
+      $('.show__title', it.card).textContent = $('.work__title', it.btn).textContent;
+      $('.show__tag', it.card).textContent = $('.work__tag', it.btn).textContent;
     });
     show(cur, false);
   }
-  function openWithSound() {
-    rv.pause();
-    openPlayer(list[cur].btn);
-  }
+  function openWithSound() { rv.pause(); openPlayer(list[cur].btn); }
 
-  rv.addEventListener('playing', () => stage.classList.add('is-ready'));
-  rv.addEventListener('timeupdate', () => {
-    const it = list[cur];
-    if (!it || !rv.duration) return;
-    $('.reel__playhead', it.clip).style.left = `${(rv.currentTime / rv.duration) * 100}%`;
-    $('#reelTc').textContent = timecode(rv.currentTime);
-  });
+  rv.addEventListener('playing', () => rv.parentElement && rv.parentElement.classList.add('is-ready'));
   rv.addEventListener('ended', () => show(cur + 1));
-  items.forEach((it) => it.clip.addEventListener('click', () => {
+  items.forEach((it) => it.card.addEventListener('click', () => {
+    if (moved) return;
     const k = list.indexOf(it);
     if (k === cur) openWithSound(); else if (k >= 0) show(k);
   }));
-  $('#reelPrev').addEventListener('click', () => show(cur - 1));
-  $('#reelNext').addEventListener('click', () => show(cur + 1));
-  $('#reelSound').addEventListener('click', openWithSound);
-  stage.addEventListener('click', (e) => { if (!e.target.closest('button')) openWithSound(); });
-  reel.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') { show(cur + 1); list[cur].clip.focus(); e.preventDefault(); }
-    if (e.key === 'ArrowLeft') { show(cur - 1); list[cur].clip.focus(); e.preventDefault(); }
+  $('#showPrev').addEventListener('click', () => show(cur - 1));
+  $('#showNext').addEventListener('click', () => show(cur + 1));
+  $('#showSound').addEventListener('click', openWithSound);
+  showEl.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { show(cur + 1); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { show(cur - 1); e.preventDefault(); }
   });
+  // arrastar com o dedo ou o rato
+  let x0 = null;
+  let moved = false;
+  deck.addEventListener('pointerdown', (e) => { x0 = e.clientX; moved = false; });
+  deck.addEventListener('pointermove', (e) => { if (x0 !== null && Math.abs(e.clientX - x0) > 12) moved = true; });
+  const end = (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+    setTimeout(() => { moved = false; }, 0);
+  };
+  deck.addEventListener('pointerup', end);
+  deck.addEventListener('pointercancel', () => { x0 = null; });
+
   chips.forEach((chip) => chip.addEventListener('click', () => {
     const was = list[cur];
     list = items.filter((x) => !x.w.classList.contains('is-hidden'));
-    items.forEach((x) => { x.clip.hidden = !list.includes(x); });
     show(Math.max(0, list.indexOf(was)));
   }));
   new IntersectionObserver(([e]) => {
     inView = e.isIntersecting;
     if (inView) playIfVisible(); else rv.pause();
-  }, { threshold: 0.35 }).observe(stage);
+  }, { threshold: 0.35 }).observe(deck);
   document.addEventListener('playerclose', playIfVisible);
   document.addEventListener('langchange', labels);
 
-  reel.hidden = false;
-  reel.closest('.works').classList.add('has-reel');
+  showEl.hidden = false;
+  showEl.closest('.works').classList.add('has-show');
   labels();
 }
 
