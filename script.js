@@ -419,6 +419,12 @@ if (showEl) {
   showEl.addEventListener('focusin', () => { hold = true; clearTimeout(timer); });
   showEl.addEventListener('focusout', () => { hold = false; schedule(); });
   document.addEventListener('playerclose', () => { playIfVisible(); schedule(); });
+  // se o browser bloquear o autoplay (ex.: poupança de bateria), arranca no primeiro gesto do visitante
+  const unlock = () => {
+    playIfVisible();
+    if (heroVideo && heroVideo.src && heroVideo.paused) heroVideo.play().catch(() => {});
+  };
+  ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach((ev) => window.addEventListener(ev, unlock, { passive: true }));
   document.addEventListener('langchange', labels);
 
   showEl.hidden = false;
