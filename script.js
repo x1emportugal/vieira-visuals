@@ -353,8 +353,8 @@ if (showEl) {
       rv.poster = it.img.getAttribute('src');
       rv.src = it.btn.dataset.video;
     }
-    it.card.prepend(rv);
-    if (play) playIfVisible();
+    if (rv.parentElement !== it.card) it.card.prepend(rv);
+    if (play) requestAnimationFrame(playIfVisible);
     schedule();
   }
   function labels() {
@@ -367,6 +367,10 @@ if (showEl) {
   function openWithSound() { clearTimeout(timer); rv.pause(); openPlayer(list[cur].btn); }
 
   rv.addEventListener('playing', () => rv.parentElement && rv.parentElement.classList.add('is-ready'));
+  // mover o vídeo para outro cartão interrompe o play(): voltar a tentar quando o ficheiro estiver pronto
+  rv.addEventListener('loadeddata', playIfVisible);
+  rv.addEventListener('canplay', playIfVisible);
+  rv.addEventListener('pause', () => { if (!rv.ended) requestAnimationFrame(() => { if (rv.paused) playIfVisible(); }); });
   items.forEach((it) => it.card.addEventListener('click', () => {
     if (moved) return;
     const k = list.indexOf(it);
