@@ -394,3 +394,8 @@ body.is-locked{overflow:hidden;}
 @media (min-width:900px){
   .show__card{transform:translateX(calc(-50% + var(--o) * var(--w) * .7)) rotateY(calc(var(--o) * -16deg)) scale(calc(1 - var(--a) * .12));}
 }
+
+/* o vídeo tem de ficar por cima da imagem de capa (antes ficava tapado por ela) */
+.show__card > img{z-index:0;}
+.show__video{z-index:1;}
+.show__card::after{z-index:1;}
