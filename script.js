@@ -154,7 +154,7 @@ const saveData = navigator.connection && navigator.connection.saveData;
 const heroSrc = () => (tallScreen.matches ? heroVideo.dataset.srcTall : heroVideo.dataset.srcWide);
 
 function startHero() {
-  if (reduceMotion.matches || saveData) return; // fica o poster, sem gastar dados
+  if (saveData) return; // fica o poster, sem gastar dados
   heroVideo.addEventListener('playing', () => heroVideo.classList.add('is-playing'));
   heroVideo.src = heroSrc();
   heroVideo.play().catch(() => {});
@@ -303,7 +303,8 @@ if (showEl) {
   });
   const rv = document.createElement('video');
   rv.className = 'show__video';
-  rv.muted = true; rv.loop = true; rv.playsInline = true; rv.preload = 'metadata';
+  rv.muted = true; rv.defaultMuted = true; rv.loop = true; rv.playsInline = true; rv.autoplay = true; rv.preload = 'auto';
+  ['muted', 'playsinline', 'webkit-playsinline', 'autoplay', 'loop'].forEach((a) => rv.setAttribute(a, ''));
   rv.setAttribute('aria-hidden', 'true');
   let list = items;
   let cur = 0;
@@ -314,9 +315,13 @@ if (showEl) {
   const pad = (n) => String(n).padStart(2, '0');
   const schedule = () => {
     clearTimeout(timer);
-    if (inView && !hold && !reduceMotion.matches && !player.classList.contains('is-open')) timer = setTimeout(() => show(cur + 1), AUTO);
+    if (inView && !hold && !player.classList.contains('is-open')) timer = setTimeout(() => show(cur + 1), AUTO);
   };
-  const playIfVisible = () => { if (inView && !reduceMotion.matches && !player.classList.contains('is-open')) rv.play().catch(() => {}); };
+  const playIfVisible = () => {
+    if (!inView || player.classList.contains('is-open')) return;
+    rv.muted = true;
+    rv.play().catch(() => {});
+  };
 
   function layout() {
     const n = list.length;
