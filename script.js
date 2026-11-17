@@ -11,54 +11,54 @@ const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
 /* ================= i18n ================= */
 const EN = {
   'a11y.skip': 'Skip to the portfolio',
-  'nav.work': 'portfolio', 'nav.process': 'our process', 'nav.about': 'about', 'nav.contact': 'contact', 'nav.cta': 'WhatsApp',
+  'nav.work': 'Portfolio', 'nav.process': 'Our process', 'nav.about': 'About', 'nav.contact': 'Contact', 'nav.cta': 'WhatsApp',
   'cta.idea': 'Bring your idea to life',
-  'hero.eyebrow': 'videomaker · algarve',
-  'hero.title': 'tailored visual<br>productions for every story<em>.</em>',
+  'hero.eyebrow': 'Videomaker · Algarve',
+  'hero.title': 'Tailored visual<br>productions for every story<em>.</em>',
   'hero.sub': 'We create with a cinematic eye for brands, spaces and experiences.',
-  'hero.cta1': 'Portfolio', 'hero.cta2': 'Shall we talk about your project?', 'hero.cue': 'explore',
-  'man.eyebrow': 'vieira visuals',
+  'hero.cta1': 'Portfolio', 'hero.cta2': 'Shall we talk about your project?', 'hero.cue': 'Explore',
+  'man.eyebrow': 'Vieira Visuals',
   'man.lead': 'If you already understand that your business depends on positioning, showing excellence and exclusivity online.',
   'man.big': 'Good content can say <em>more</em> than many words.',
-  'kw.1': 'cinematic', 'kw.2': 'sophisticated', 'kw.3': 'timeless',
-  'works.eyebrow': 'get to know us', 'works.title': 'portfolio',
-  'works.sub': 'A recent selection. Tap a video to watch it with sound.',
+  'kw.1': 'Cinematic', 'kw.2': 'Sophisticated', 'kw.3': 'Timeless',
+  'works.eyebrow': 'Get to know us', 'works.title': 'Portfolio',
+  'works.sub': 'A recent selection. Tap a card to watch it with sound.',
   'show.want': 'I want a video like this', 'show.sound': 'Watch with sound',
-  'f.all': 'all', 'f.events': 'events', 'f.brands': 'brands', 'f.drone': 'drone', 'f.stories': 'stories',
-  'w1.c': 'beach club', 'w1.t': 'Beach club sunset',
-  'w2.c': 'drone', 'w2.t': 'The Algarve coast from above',
-  'w3.c': 'restaurant', 'w3.t': 'A terrace with a signature',
-  'w4.c': 'stories', 'w4.t': 'Waiting, at sunset',
-  'w5.c': 'stage', 'w5.t': 'Show night',
-  'w6.c': 'beach club', 'w6.t': 'DJ set against the light',
-  'w7.c': 'hotel', 'w7.t': 'Afternoon at the hotel',
-  'w8.c': 'music', 'w8.t': 'Live session',
-  'w9.c': 'sport', 'w9.t': 'Triathlon, on the run course',
-  'w10.c': 'lifestyle', 'w10.t': 'Golden light',
-  'w11.c': 'food', 'w11.t': 'Live cooking',
-  'w12.c': 'drone', 'w12.t': 'Olhão marina',
-  'w13.c': 'beach club', 'w13.t': 'Full house',
-  'w14.c': 'stage', 'w14.t': 'On stage',
-  'proc.eyebrow': 'our process', 'proc.title': 'step by step, building your film.',
-  'proc.1.t': 'understand first',
+  'f.all': 'All', 'f.events': 'Events', 'f.brands': 'Brands', 'f.drone': 'Drone', 'f.stories': 'Stories',
+  'w1.c': 'Beach club', 'w1.t': 'Beach club sunset',
+  'w2.c': 'Drone', 'w2.t': 'The Algarve coast from above',
+  'w3.c': 'Restaurant', 'w3.t': 'A terrace with a signature',
+  'w4.c': 'Stories', 'w4.t': 'Waiting, at sunset',
+  'w5.c': 'Stage', 'w5.t': 'Show night',
+  'w6.c': 'Beach club', 'w6.t': 'DJ set against the light',
+  'w7.c': 'Hotel', 'w7.t': 'Afternoon at the hotel',
+  'w8.c': 'Music', 'w8.t': 'Live session',
+  'w9.c': 'Sport', 'w9.t': 'Triathlon, on the run course',
+  'w10.c': 'Lifestyle', 'w10.t': 'Golden light',
+  'w11.c': 'Food', 'w11.t': 'Live cooking',
+  'w12.c': 'Drone', 'w12.t': 'Olhão marina',
+  'w13.c': 'Beach club', 'w13.t': 'Full house',
+  'w14.c': 'Stage', 'w14.t': 'On stage',
+  'proc.eyebrow': 'Our process', 'proc.title': 'Step by step, building your film.',
+  'proc.1.t': 'Understand first',
   'proc.1.d': 'Before the camera is switched on, we listen and want to understand the brand, the moment and the goals. The film starts here.',
-  'proc.2.t': 'frame with care',
+  'proc.2.t': 'Frame with care',
   'proc.2.d': 'From choosing the equipment and location to writing the script, everything makes sense with your brand’s goal.',
-  'proc.3.t': 'deliver with intent',
+  'proc.3.t': 'Deliver with intent',
   'proc.3.d': 'Post-production is designed for where the video will live: website, social media or the event screen. Specific versions for every format.',
-  'about.eyebrow': 'about',
+  'about.eyebrow': 'About',
   'about.p1': 'Over the last 3 years we have worked with many brands, from luxury resorts and beach clubs to corporate events, sport and local businesses.',
   'about.p2': 'Our passion comes from adapting to any context and audience.',
   'about.p3': 'Always giving every project the same technical care and the same cinematic eye, whatever the scale or the budget. Hire something exclusive, not an assembly line.',
-  'about.s1': 'aerial footage', 'about.s2': 'home base', 'about.s3': 'capture and delivery',
-  'about.for': 'who I film for',
-  't.1': 'brands', 't.2': 'agencies', 't.3': 'beach clubs', 't.4': 'hotels',
-  't.5': 'restaurants', 't.6': 'events', 't.7': 'weddings', 't.8': 'churches',
-  'contact.eyebrow': 'contact',
-  'contact.title': 'ready to raise the audiovisual production of your <em>business</em>?',
+  'about.s1': 'Aerial footage', 'about.s2': 'Home base', 'about.s3': 'Capture and delivery',
+  'about.for': 'Who I film for',
+  't.1': 'Brands', 't.2': 'Agencies', 't.3': 'Beach clubs', 't.4': 'Hotels',
+  't.5': 'Restaurants', 't.6': 'Events', 't.7': 'Weddings', 't.8': 'Churches',
+  'contact.eyebrow': 'Contact',
+  'contact.title': 'Ready to raise the audiovisual production of your <em>business</em>?',
   'contact.cta1': 'Contact', 'contact.cta2': 'Follow us',
   'contact.sub': 'Let’s make films that position you.',
-  'faq.eyebrow': 'frequently asked questions', 'faq.title': 'the essentials, in a few words.',
+  'faq.eyebrow': 'Frequently asked questions', 'faq.title': 'The essentials, in a few words.',
   'faq.1.q': 'Do you only work in the Algarve?',
   'faq.1.a': 'Our base is the Algarve, where we film and know most marina and private-show projects. But we are open to exploring the world, recording everything.',
   'faq.2.q': 'How do I ask for a quote?',
@@ -67,7 +67,7 @@ const EN = {
   'faq.3.a': 'Every production is personalised and aligned in prior meetings on expectations and production.',
   'faq.4.q': 'Which brands have you worked with?',
   'faq.4.a': 'Grupo Nosolo, MOOV gym, Ballet Burn the Floor, Active Body and BF Security, as well as private events and local businesses.',
-  'footer.slogan': 'visuals tailored to every story.',
+  'footer.slogan': 'Visuals tailored to every story.',
 };
 const UI = {
   pt: { watch: 'Ver vídeo: ', langTo: 'Mudar para inglês', menuOpen: 'Abrir menu', menuClose: 'Fechar menu',
@@ -289,8 +289,8 @@ if (showEl) {
   const deck = $('#showDeck');
   const bg = $('#showBg');
   const T = {
-    pt: { v: 'redes sociais · 9:16', h: 'site e YouTube · 16:9', msg: (t) => `Olá Lucas! Vi o vídeo "${t}" no site e queria um vídeo assim para o meu negócio.` },
-    en: { v: 'social media · 9:16', h: 'website and YouTube · 16:9', msg: (t) => `Hi Lucas! I saw the video "${t}" on the website and I'd like a video like this for my business.` },
+    pt: { v: 'Redes sociais · 9:16', h: 'Site e YouTube · 16:9', msg: (t) => `Olá Lucas! Vi o vídeo "${t}" no site e queria um vídeo assim para o meu negócio.` },
+    en: { v: 'Social media · 9:16', h: 'Website and YouTube · 16:9', msg: (t) => `Hi Lucas! I saw the video "${t}" on the website and I'd like a video like this for my business.` },
   };
   const items = works.map((w) => {
     const btn = $('.work__btn', w);
@@ -303,12 +303,19 @@ if (showEl) {
   });
   const rv = document.createElement('video');
   rv.className = 'show__video';
-  rv.muted = true; rv.playsInline = true; rv.preload = 'metadata';
+  rv.muted = true; rv.loop = true; rv.playsInline = true; rv.preload = 'metadata';
   rv.setAttribute('aria-hidden', 'true');
   let list = items;
   let cur = 0;
   let inView = false;
+  let hold = false;
+  let timer = 0;
+  const AUTO = 7000;
   const pad = (n) => String(n).padStart(2, '0');
+  const schedule = () => {
+    clearTimeout(timer);
+    if (inView && !hold && !reduceMotion.matches && !player.classList.contains('is-open')) timer = setTimeout(() => show(cur + 1), AUTO);
+  };
   const playIfVisible = () => { if (inView && !reduceMotion.matches && !player.classList.contains('is-open')) rv.play().catch(() => {}); };
 
   function layout() {
@@ -348,6 +355,7 @@ if (showEl) {
     }
     it.card.prepend(rv);
     if (play) playIfVisible();
+    schedule();
   }
   function labels() {
     items.forEach((it) => {
@@ -356,10 +364,9 @@ if (showEl) {
     });
     show(cur, false);
   }
-  function openWithSound() { rv.pause(); openPlayer(list[cur].btn); }
+  function openWithSound() { clearTimeout(timer); rv.pause(); openPlayer(list[cur].btn); }
 
   rv.addEventListener('playing', () => rv.parentElement && rv.parentElement.classList.add('is-ready'));
-  rv.addEventListener('ended', () => show(cur + 1));
   items.forEach((it) => it.card.addEventListener('click', () => {
     if (moved) return;
     const k = list.indexOf(it);
@@ -395,8 +402,14 @@ if (showEl) {
   new IntersectionObserver(([e]) => {
     inView = e.isIntersecting;
     if (inView) playIfVisible(); else rv.pause();
+    schedule();
   }, { threshold: 0.35 }).observe(deck);
-  document.addEventListener('playerclose', playIfVisible);
+  // pausa o avanço automático enquanto o visitante está a ver ou a mexer
+  deck.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { hold = true; clearTimeout(timer); } });
+  deck.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') { hold = false; schedule(); } });
+  showEl.addEventListener('focusin', () => { hold = true; clearTimeout(timer); });
+  showEl.addEventListener('focusout', () => { hold = false; schedule(); });
+  document.addEventListener('playerclose', () => { playIfVisible(); schedule(); });
   document.addEventListener('langchange', labels);
 
   showEl.hidden = false;
